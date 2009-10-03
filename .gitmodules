@@ -1,0 +1,15 @@
+[submodule "vendor/plugins/seed-fu"]
+	path = vendor/plugins/seed-fu
+	url = git://github.com/mbleigh/seed-fu.git
+[submodule "vendor/plugins/inherited_resources"]
+	path = vendor/plugins/inherited_resources
+	url = git://github.com/josevalim/inherited_resources.git
+[submodule "vendor/plugins/paperclip"]
+	path = vendor/plugins/paperclip
+	url = git://github.com/thoughtbot/paperclip.git
+[submodule "vendor/plugins/settingslogic"]
+	path = vendor/plugins/settingslogic
+	url = git://github.com/binarylogic/settingslogic.git
+[submodule "vendor/plugins/authlogic"]
+	path = vendor/plugins/authlogic
+	url = git://github.com/binarylogic/authlogic.git
