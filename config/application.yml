@@ -1,0 +1,31 @@
+defaults: &defaults
+  app:
+    admin_email: admin@onecircle.es
+  access_request:
+      avatar:
+        big_size: "134x199#"
+        medium_size: "51x51#"
+        med_size: "160x150<"
+        small_size: "40x40#"
+      per_page: 10
+      gender:
+        men: 0
+        women: 1
+        other: 2
+
+  users:
+    per_page: 10
+  challenge_rules:
+    max_per_week_per_creator: 1
+
+development:
+  <<: *defaults
+  url: 'http://localhost:3000'
+
+test:
+  <<: *defaults
+  url: 'http://test.host:5555'
+
+production:
+  <<: *defaults
+

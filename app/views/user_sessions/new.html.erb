@@ -1,0 +1,28 @@
+
+<% unless current_user %>
+
+<div id="login" class="box">
+	<h1>
+		Acceso a Ocio Ciudad Real:
+	</h1>
+	<% form_for @user_session, :url => user_session_path, :html => {:class => 'login'} do |f| %>
+		<%= f.error_messages :class => "errorExplanation", :header_tag => "h3" %>
+
+		<p>
+			<%= f.label :login%>
+			<%= f.text_field :login, :id => 'login'%>
+			</p>
+		<p>
+			<%= f.label :password %>
+			<%= f.password_field :password, :id => 'password' %>
+		</p>
+		<p class="login_button"><button type="submit"><%= t("app.user_sessions.new.link_to")%></button>
+		</p>
+
+		<% end %>
+</div>
+
+<% else -%>
+
+<% end -%>
+
