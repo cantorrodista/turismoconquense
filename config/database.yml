@@ -1,10 +1,10 @@
 development:
   adapter: mysql
-  database: ocr_dev
+  database: ocr_development
   username: root
-  password: 
+  password:
   host: localhost
-  socket: /tmp/mysql.sock
+  #socket: /tmp/mysql.sock
 
 
 
@@ -14,7 +14,7 @@ test:
   username: root
   password:
   host: localhost
-  socket: /tmp/mysql.sock
+  #socket: /tmp/mysql.sock
 
 
 
@@ -22,6 +22,7 @@ production:
   adapter: mysql
   database: ocr
   username: root
-  password: 
+  password:
   host: localhost
   timeout: 5000
+
