@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transiti
+onal.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <title><%#= get_title %></title>
+  <base href="<%= Settings.url %>" />
+
+<% if asset_packager? %>
+  <%= stylesheet_link_merged :base %>
+<% else %>
+  <%= stylesheet_link_tag "ocr" %>
+
+<% end %>
+  <!--[if lte IE 7]>
+     <%= stylesheet_link_tag "ocr_ie" %>
+  <![endif]-->
+  <link rel="start" type="text/html" href="/" title="Página de inicio" />
+
+  <%= render :partial => 'layouts/google_analytics' unless RAILS_ENV == "development" %>
+
+</head>
+<body id="<%= params[:controller] %>">
+ 
+
+  <div id="container">
+    <div id="wrapper">
+	<% if @top_banners%>
+		<% @top_banners.each do |banner|%>
+			<%= link_to image_tag(banner.image(:body)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%>
+		<% end %>
+	<% end %>
+    <%= render :partial => 'layouts/header' %>
+    <div id="menu">
+      <%= render :partial => "layouts/menu"%>
+    </div>
+    <div id="content">
+		<div id="wrapper">
+	    
+			<div id="flmessages"></div>
+			<%- if app_message? -%>
+		  	<div class="flashmsg <%= app_message_type %>">
+		     <%= app_message %>
+		  	</div>
+		  <%- end %>
+	<% unless logged_in? %>
+    	<div id="sidebar_left">
+			<%= render :partial => "layouts/left_sidebar"%>
+    	</div>
+	<% end %>
+
+      <%= yield -%>
+   
+ <% unless logged_in? %>
+    	<div id="sidebar_right">
+			<%= render :partial => "layouts/right_sidebar"%>
+    	</div>
+    <% end %>
+      </div><!-- #content_home -->
+    <%= render :partial => 'layouts/footer' %>
+  </div><!-- #container -->
+
+<% if asset_packager? %>
+  <%= javascript_include_merged :base %>
+<% else %>
+  <%= javascript_include_tag  'jquery',  'jquery-ui', 'jrails'-%>
+<% end %>
+
+<%= yield :tinymce -%>
+<%= yield :footer -%>
+
+
+<%= yield :tinymce_init %>
+</body>
+</html>
+

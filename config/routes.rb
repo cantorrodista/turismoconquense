@@ -1,11 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :user_session
-  map.resources :advertisers
+  map.resources :advertisers, :collection => { :delete => :delete }
   map.resources :banners
-  
-  map.root :controller => 'user_sessions', :action => 'new'
-  
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  map.resources :news, :collection => { :delete => :delete }
+  map.root :controller => 'home', :action => 'index'
+
+
 end
+

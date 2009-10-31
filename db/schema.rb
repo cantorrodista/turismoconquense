@@ -27,8 +27,11 @@ ActiveRecord::Schema.define(:version => 20091012120039) do
     t.string   "url"
     t.integer  "width"
     t.integer  "height"
+    t.string   "location"
     t.integer  "position"
     t.integer  "advertiser_id"
+    t.string   "image_file_name"
+    t.string   "image_mime_type", :limit => 64
     t.datetime "created_at"
     t.datetime "updated_at"
   end

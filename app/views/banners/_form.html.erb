@@ -1,0 +1,47 @@
+<% use_tinymce -%>
+
+
+
+
+        <%= f.error_messages %>
+        <fieldset>
+            <p>
+              <%= f.label :title, t('activerecord.attributes.banner.title') %>
+              <%= f.text_field :title %>
+            </p>
+            <p>
+              <%= f.label :url, t('activerecord.attributes.banner.url') %> <span><p>(dejar en blanco si queremos que vaya a la página del anunciante)</p></span>
+              <%= f.text_field :url %>
+            </p>
+			 <p>
+	              <%= f.label :width, t('activerecord.attributes.banner.width') %>
+				<%= banner.width%> px
+	            </p>
+			<p>
+              <%= f.label :position, t('activerecord.attributes.banner.position') %>
+              <%= f.select :position,options_for_select([ 1, 2,3,4,5 ],banner.position) %>
+            </p>
+			<p>
+              <%= f.label :advertiser, t('activerecord.attributes.banner.advertiser') %>
+              <%= f.select :advertiser_id,Advertiser.all.collect {|p| [ p.name, p.id ] }, { :include_blank => true } %>
+            </p>
+            <p>
+              <%= f.label :body, t('activerecord.attributes.banner.body') %>
+              <%= f.text_area :body, :rows => "12", :cols => "20" %>
+            </p>
+
+            <p>
+            <span id="logo">
+				<% unless banner.new_record? %>
+					<%= image_tag banner.image(:body_medium) if banner.is_active?%>
+				<% end %>
+			</span>
+			<%= f.label :image, t('activerecord.attributes.banner.image') %>
+            <%= f.file_field :image%></p>
+
+
+
+
+
+        <%= f.submit t('app.banner.create.link_to') %>
+

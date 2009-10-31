@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :logged_in?
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
+  before_filter :load_banners
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
 
@@ -54,6 +54,13 @@ class ApplicationController < ActionController::Base
 
     def render_error(options={})
       render :template => 'public/404.html', :layout => false, :status => options[:code] || 404
+    end
+    
+    def load_banners
+      @top_banners = Banner.by_location('Top')
+      @left_banners = Banner.by_location('Left')
+      @right_banners = Banner.by_location('Right')
+      @bottom_banners = Banner.by_location('Bottom')
     end
 
 end

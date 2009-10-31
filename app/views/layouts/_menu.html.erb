@@ -1,0 +1,13 @@
+<ul>
+		<% unless logged_in? %>
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Portfolio</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Contact</a></li>
+		
+		<% else %>
+			<li><%= link_to t('app.banner.title'), banners_path%></li>
+			<li><%= link_to t('app.advertiser.title'), advertisers_path%></li>
+		<% end%>
+</ul>

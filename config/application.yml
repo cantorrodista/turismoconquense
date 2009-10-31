@@ -1,22 +1,19 @@
 defaults: &defaults
   app:
-    admin_email: admin@onecircle.es
-  access_request:
-      avatar:
-        big_size: "134x199#"
-        medium_size: "51x51#"
-        med_size: "160x150<"
-        small_size: "40x40#"
-      per_page: 10
-      gender:
-        men: 0
-        women: 1
-        other: 2
-
-  users:
-    per_page: 10
-  challenge_rules:
-    max_per_week_per_creator: 1
+    admin_email: cantorrodista@gmail.com
+    include_for_asset_packager: 0
+    url: "http://localhost:3000"
+  advertiser:
+    logo:
+      big_size: "134x199#"
+      medium_size: "51x51#"
+      small_size: "40x40#"
+  banner:    
+    image:
+      body_medium: "470x470>"
+      body: "960x960>"
+      sidebar: "1000x200>"
+    
 
 development:
   <<: *defaults

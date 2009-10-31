@@ -1,0 +1,46 @@
+<h1>Gestión de Banners</h1>
+
+<!-- <div class="toolbar">
+    <ul>
+    	<li><%= link_to t('app.advertiser.new.link_to'), new_advertiser_path, :class =>"add"%></li>
+    </ul>	
+</div> -->
+
+<table border="0" cellspacing="0" cellpadding="0" class="table_list">
+  <thead>
+    <tr>
+      <th><input type="checkbox" name="" value="" id="check_toggle" class="check_group" /></th>
+      <th>Nombre</th>
+      <th>Localización</th> 
+   	  <th>Posición</th>  
+   	  <th>Ancho (px)</th>    
+   	  
+      <th>Anunciante</th>
+      <th>Activo</th>    
+    
+      <th class="actions">
+        <span>acciones</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @banners.each do |a| %>
+      <tr>
+        <td class="category_list_checks"><input type='checkbox' name='ids[]' value='<%=a.id%>' class="check_group" /></td>
+        <td><%= link_to(a.title, edit_banner_url(a)) if a.title %> </td>
+        <td><%= a.location if a.location %> </td>
+	    <td><%= a.position if a.position %> </td>
+	    <td><%= a.width if a.width %> </td>
+    	<td><%= link_to(a.advertiser.name, edit_advertiser_path(a.advertiser)) if a.advertiser %> </td>
+        <td><%= a.is_active? ? "Si" : "No"%> </td>
+        <td class='actions'><%= link_to('Editar', edit_banner_url(a), :class => 'edit') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+ 
+
+<%= will_paginate @banners, :class => 'pagination', :prev_label => '« Anterior', :next_label => 'Siguiente »' %>
+
+

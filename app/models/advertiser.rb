@@ -1,13 +1,14 @@
 class Advertiser < ActiveRecord::Base
+  
+  has_many :bannerss, :class_name => "banners"
   has_attached_file :logo, :default_style => :medium,
     :path => ":rails_root/" + (RAILS_ENV == 'test'? 'tmp/' : '') + "public" +
              "/system/:class/:attachment/:id/:style_:basename.:extension",
-    :url =>  "/system/:class/:attachment/:id/:style_:basename.:extension"
+    :url =>  "/system/:class/:attachment/:id/:style_:basename.:extension",
     :styles => {
 
       :small => [Settings.advertiser.logo.small_size, :jpg],
       :medium => [Settings.advertiser.logo.medium_size, :jpg],
-      :med_small => [Settings.advertiser.logo.med_size, :jpg],
       :big => [Settings.advertiser.logo.big_size, :jpg]
     }
 
@@ -22,5 +23,6 @@ class Advertiser < ActiveRecord::Base
     validates_attachment_size :logo,
         :less_than => 10.megabyte,
         :message => I18n.translate('app.advertiser.logo.max_size')
-  
+
 end
+

@@ -1,7 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-es:  
+es:
   activerecord:
     models:
       user: Usuario
@@ -10,7 +10,22 @@ es:
       user_session:
         email: Email
         passwords: Contraseña
-      
+
+      advertiser:
+        name: Nombre
+        url: Url
+        description: Descripción
+        logo: Logo
+        
+      banner:
+        title: Nombre
+        url: Link al que apunta
+        body: Breve descripcion
+        image: Imagen del banner
+        position: Posición
+        advertiser: Anunciante
+        width: Ancho máximo
+
 # Errores de activerecord
     errors:
       template:
@@ -156,6 +171,29 @@ es:
     pm: "pm"
 
   flash:
+    user_sessions:
+      destroy:
+        notice: ¡Hasta pronto!
+      create:
+        notice: ¡Bienvenido!
+    advertisers:
+      create:
+        notice: Anunciante creado correctamente :)
+        error: Ocurrio algun error al crear el anunciante :S
+      update:
+        notice: Anunciante modificado correctamente :)
+        error: Ocurrio algun error al crear el anunciante :S
+      destroy:
+        notice: Has borrado correctamente el anunciante
+        
+    banners:
+      create:
+        notice: Banner creado correctamente :)
+        error: Ocurrio algun error al crear el banner :S
+      update:
+        notice: Banner actualizado correctamente :)
+        error: Ocurrio algún error al borrar el banner :S
+        
 
   authlogic:
     error_messages:
@@ -173,10 +211,29 @@ es:
         email: 'Correo electrónico'
         password: 'Contraseña'
         remember_me: 'Recuérdame en este equipo'
-  
-  
+
+
   app:
-    adverstiser:
+    site:
+      logged_in_only: Debes iniciar sesión para ver éste contenido
+    advertiser:
+      title: Anunciantes
       logo:
         only_images: "El adjunto no esta soportado. Solo se admiten extensiones jpg, png y gif"
         max_size: "El tamaño máximo para el logo es de 10 Mb"
+        title: 'Logo'
+      new:
+        link_to: "Nuevo anunciante"
+      create:
+        link_to: "Guardar"
+    user_session:
+      destroy:
+        link_to: Cerrar sesión
+      new:
+        title: Iniciar sesión
+        link_to: Iniciar sesión
+    banner:
+      title: Banners
+      create:
+        link_to: 'Guardar'
+

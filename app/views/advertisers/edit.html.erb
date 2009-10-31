@@ -1,0 +1,14 @@
+<div class="form_toolbar">
+	<ul>
+		<li>
+			<%= link_to 'Volver', advertisers_path%> 
+		</li>
+		<li>
+			<%= link_to 'Eliminar', advertiser_path(@advertiser),:confirm => "Estás a punto de eliminar '#{@advertiser.name}', ¿estás seguro?", :method => :delete, :class => "remove" %>
+		</li>
+	</ul>
+</div>
+<% form_for @advertiser, :url => advertiser_path,
+           :html => { :multipart => true} do |f| %>
+        <%= render :partial => 'form', :locals => {:advertiser => @advertiser, :f => f} %>
+<% end %>

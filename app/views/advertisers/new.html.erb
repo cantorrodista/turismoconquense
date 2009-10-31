@@ -1,0 +1,5 @@
+<% form_for @advertiser, :url => advertisers_path,
+           :html => { :multipart => true} do |f| %>
+        <%= render :partial => 'form', :locals => {:advertiser => @advertiser, :f => f} %>
+      <% end %>
+

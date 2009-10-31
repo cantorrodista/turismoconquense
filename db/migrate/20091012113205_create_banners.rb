@@ -6,8 +6,11 @@ class CreateBanners < ActiveRecord::Migration
       t.string :url
       t.integer :width
       t.integer :height
+      t.string :location
       t.integer :position
       t.integer :advertiser_id
+      t.string :image_file_name,    :null => true
+      t.string :image_mime_type,    :null => true, :limit => 64
       t.timestamps
     end
   end
@@ -16,3 +19,4 @@ class CreateBanners < ActiveRecord::Migration
     drop_table :banners
   end
 end
+

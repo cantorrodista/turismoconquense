@@ -1,0 +1,336 @@
+body {
+  font-family: Arial,sans-serif;
+  font-size: x-small;
+  font-variant: normal;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: #333;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-image:none;
+  list-style-position:outside;
+  list-style-type:none;
+}
+a {
+  color: #0084B6;
+}
+
+
+.accesible {
+  display: none;
+}
+
+#header {
+  height: 10em;
+  overflow: hidden;
+  background: #FFFFFF;
+  margin: 0 auto;
+
+}
+
+#header h1 {
+ font-size: 1.8em;
+ margin: 3em 0 0 0;
+ float: left;
+}
+
+#top_bar ul{
+    float: right;
+    margin: 1.5em 1em 0 0;
+}
+
+#top_bar ul li{
+    float: left;
+    margin-left: 0.6em;
+}
+#menu {
+  height: 11em;
+  background: transparent url(../images/header_small_w.gif) repeat-x scroll 0 0;
+}
+
+#menu ul {
+  float:right;
+  line-height:normal;
+  list-style-image:none;
+  list-style-position:outside;
+  list-style-type:none;
+  margin:0;
+  padding:0 2.5em 0 0;
+}
+
+#menu li {
+  float: left;
+  margin-top: 0.15em;
+}
+
+#menu .active a {
+  background:#FEF4DF;
+  color:#493E2B;
+  padding-left:0;
+}
+
+#menu a:hover, #menu .active a {
+  text-decoration:none;
+}
+
+#menu a {
+  background:#987A65;
+  border:medium none;
+  color:#FFFFFF;
+  display:block;
+  font-weight:normal;
+  font-size:1.4em;
+  font-weight:normal;
+  height:1.6em;
+  margin-left:0.5em;
+  margin-top:1em;
+  padding-top:0.3em;
+  text-align:center;
+  margin-top: 2em;
+  text-decoration:none;
+  width:7.7em;
+}
+
+
+#wrapper  {
+  margin: 0 auto;
+  width: 96em;
+
+
+
+}
+#footer{
+  margin-top: 1.5em;
+  
+  background: transparent url(../images/footer.gif) repeat-x scroll 0 0;
+
+}
+#content{
+  margin: 0 auto;
+  overflow: hidden;
+  width: 96em;
+
+
+}
+
+#sidebar_left {
+  float:left;
+  width: 20em;
+
+}
+
+#main_content {
+    float: left;
+    width: 56em;
+}
+#sidebar_right{
+    float: right;
+    width:20em;
+
+}
+
+#content form{
+    margin: 0 auto;
+    width: 71em;
+}
+#content form fieldset {
+  border: medium none;
+}
+
+#content form fieldset p {
+  margin-bottom: 2em;
+  overflow: hidden;
+}
+
+#content form fieldset label {
+  color:#616161;
+  display:block;
+  font-size:1.4em;
+  font-weight:bold;
+  margin-bottom:0.3em;
+}
+
+#content form fieldset input {
+  border:1px solid #CECECE;
+  padding:0.2em 0;
+}
+#content form fieldset p span img{
+	margin-bottom: 1.5em;
+}
+/*Errores*/
+
+
+.errorExplanation {
+    background-color: #FFCCCC;
+    vertical-align: top;
+    padding: 1em 2em;
+    text-align: center;
+    color: #CC0000;
+    overflow: hidden;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.errorExplanation h3 {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: normal;
+    color: #CC0000;
+}
+.login_content .errorExplanation h3 {
+    margin: .5em 0;
+    text-align: left;
+}
+.login_content .errorExplanation p {
+    font-size: 1em;
+    color: #333;
+    text-align: left;
+    margin-bottom: .7em;
+}
+.login_content .errorExplanation ul {
+    text-align: left;
+    color: #333;
+}
+#new_comment .errorExplanation {
+    margin-top: 2em;
+}
+#new_comment .errorExplanation ul {
+    margin-top: 0;
+}
+#new_comment .errorExplanation ul li {
+    margin-bottom: 0;
+    font-size: 1.1em;
+    line-height: 100%;
+}
+.errorExplanation ul {
+    list-style: circle;
+}
+.errorExplanation ul li {
+    display: block;
+    font-weight: bold;
+    list-style: none;
+    margin-left: 0em;
+    font-size: .8em;
+} 
+
+.fieldWithErrors {
+    color: red;
+}                                       
+.fieldWithErrors input[type="text"],
+.fieldWithErrors input[type="password"] {
+    border-color: red;
+}
+
+.noticeExplanation {
+    background-color: #FFCC99;
+    vertical-align: top;
+    text-align: center;
+    color: #987A65;
+    margin-bottom: 1em;
+    padding: 1em;	
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+.toolbar {
+	margin-top:-4.5em;
+	position:absolute;
+	width:79.1em;
+	z-index:1;
+}
+
+.toolbar ul {
+  font-size: 1.3em;
+  float: right;
+  list-style: none;
+}
+
+.toolbar ul li{
+  float: left;
+  display: inline;
+  margin-left: 0.4em;
+}
+
+.toolbar a {
+  font-size: 1.3em;
+  padding: 0.2em 0.2em 0.2em 1.4em;
+  line-height: 1.6em;
+}
+
+.toolbar ul li a {
+  font-size: 1em;
+  display: block;
+}
+#content h1 {
+	border-bottom:1px solid #C0C7CB;
+	font-family:gotham,arial,sans-serif;
+	font-size:2em;
+	font-weight:bold;
+	line-height:1em;
+	margin-bottom:1em;
+	padding:0 8em 0.3em 0.2em;
+}
+
+
+.table_list {
+  width: 100%;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.table_list tr.even {
+  background: #E9EDEF;
+}
+
+.table_list th {
+  padding: 0.5em;
+  background: #CC9933 repeat-x scroll center top;
+  color: #f2f2f2;
+  border-bottom: 4px solid #E1E6E8;
+	text-align:left;
+}
+
+.table_list th span {
+  overflow: hidden;
+  text-indent: -9000em;
+}
+
+.table_list td {
+  padding: 0.6em 0.5em;
+  border-bottom: 1px solid #E1E6E8;
+}
+
+.table_list .actions,
+.table_list .language {
+  text-align: center;
+}
+
+.table_list .main {
+  width: 50%;
+}
+
+.table_list a.edit {
+  padding: 0.2em 0.2em 0.2em 1.5em;
+  background: url('../../images/backend_neutrino/icon_pencil_blue.gif') no-repeat left center;
+}
+
+
+/* Toolbar de los formularios */
+
+.form_toolbar{
+	margin: 0 auto;
+	width: 20em;
+	height: 3em;
+}
+
+.form_toolbar li {
+	float: left;
+	font-size: 1.4em;
+	padding:0 1em 0 0;
+}
+

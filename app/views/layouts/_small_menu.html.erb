@@ -1,0 +1,5 @@
+	<ul>
+		<li>Hola <%= current_user.login%></li>
+    	<li><%= link_to t('app.user_session.destroy.link_to'), user_session_path, :method => :delete%></li>
+
+	</ul>

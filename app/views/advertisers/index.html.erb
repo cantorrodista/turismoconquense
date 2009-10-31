@@ -1,0 +1,41 @@
+<h1>Gestión de Anunciantes</h1>
+
+<div class="toolbar">
+    <ul>
+    	<li><%= link_to t('app.advertiser.new.link_to'), new_advertiser_path, :class =>"add"%></li>
+    </ul>	
+</div>
+<% form_tag(delete_advertisers_path, :method => :delete) do %>
+
+<table border="0" cellspacing="0" cellpadding="0" class="table_list">
+  <thead>
+    <tr>
+      <th><input type="checkbox" name="" value="" id="check_toggle" class="check_group" /></th>
+      <th>Nombre</th>
+      <th>Link</th>    
+      <th class="actions">
+        <span>acciones</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @advertisers.each do |a| %>
+      <tr>
+        <td class="category_list_checks"><input type='checkbox' name='ids[]' value='<%=a.id%>' class="check_group" /></td>
+        <td><%= link_to(a.name, edit_advertiser_url(a)) if a.name %> </td>
+        <td><%= link_to(a.url, edit_advertiser_url(a)) if a.url %> </td>
+	
+        <td class='actions'><%= link_to('Editar', edit_advertiser_url(a), :class => 'edit') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+ <p>
+            <button type="submit" class="remove_item"><span>Eliminar</span></button>
+    </p>
+<% end %>
+
+<%= will_paginate @advertisers, :class => 'pagination', :prev_label => '« Anterior', :next_label => 'Siguiente »' %>
+
+

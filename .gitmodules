@@ -13,3 +13,9 @@
 [submodule "vendor/plugins/authlogic"]
 	path = vendor/plugins/authlogic
 	url = git://github.com/binarylogic/authlogic.git
+[submodule "vendor/plugins/embedded-action"]
+	path = vendor/plugins/embedded-action
+	url = git://github.com/sd/embedded-actions.git
+[submodule "vendor/plugins/will_paginate"]
+	path = vendor/plugins/will_paginate
+	url = git://github.com/mislav/will_paginate.git
