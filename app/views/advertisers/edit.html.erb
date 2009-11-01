@@ -1,7 +1,7 @@
 <div class="form_toolbar">
 	<ul>
 		<li>
-			<%= link_to 'Volver', advertisers_path%> 
+			<%= link_to 'Volver', advertisers_path, :class => "back"%> 
 		</li>
 		<li>
 			<%= link_to 'Eliminar', advertiser_path(@advertiser),:confirm => "Estás a punto de eliminar '#{@advertiser.name}', ¿estás seguro?", :method => :delete, :class => "remove" %>

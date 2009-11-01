@@ -2,7 +2,7 @@ class AdvertisersController < InheritedResources::Base
   defaults :resource_class => Advertiser, :collection_name => 'advertisers', :instance_name => 'advertiser'
   before_filter :require_session, :except => [:show]
   respond_to :html
-
+  include NicenamedResource
 
   def create
       create! do |success, failure|

@@ -1,10 +1,11 @@
 <h1>Gestión de Banners</h1>
 
-<!-- <div class="toolbar">
+ <div class="toolbar">
     <ul>
-    	<li><%= link_to t('app.advertiser.new.link_to'), new_advertiser_path, :class =>"add"%></li>
+    	<li><%= link_to t('app.banner.new.link_to'), new_banner_path, :class =>"add"%></li>
     </ul>	
-</div> -->
+</div>
+<% form_tag(delete_banners_path, :method => :delete) do %>
 
 <table border="0" cellspacing="0" cellpadding="0" class="table_list">
   <thead>
@@ -32,15 +33,18 @@
 	    <td><%= a.position if a.position %> </td>
 	    <td><%= a.width if a.width %> </td>
     	<td><%= link_to(a.advertiser.name, edit_advertiser_path(a.advertiser)) if a.advertiser %> </td>
-        <td><%= a.is_active? ? "Si" : "No"%> </td>
+        <td><%= show_status_icon(a.is_active?)%> </td>
         <td class='actions'><%= link_to('Editar', edit_banner_url(a), :class => 'edit') %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<p>
+            <button type="submit" class="remove_item"><span>Eliminar</span></button>
+    </p>
+<% end %>
  
 
-<%= will_paginate @banners, :class => 'pagination', :prev_label => '« Anterior', :next_label => 'Siguiente »' %>
+<%= will_paginate @banners, :class => 'pagination', :prev_label => 'Anterior', :next_label => 'Siguiente' %>
 
 

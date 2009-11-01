@@ -1,0 +1,14 @@
+<div class="form_toolbar">
+	<ul>
+		<li>
+			<%= link_to 'Volver', highlights_path, :class => "back"%> 
+		</li>
+		<li>
+			<%= link_to 'Eliminar', highlight_path(@highlight),:confirm => "Estás a punto de eliminar '#{@highlight.name}', ¿estás seguro?", :method => :delete, :class => "remove" %>
+		</li>
+	</ul>
+</div>
+<% form_for @highlight, :url => highlight_path,
+           :html => { :multipart => true} do |f| %>
+        <%= render :partial => 'form', :locals => {:highlight => @highlight, :f => f} %>
+<% end %>

@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     @user_session.save do |result|
       if result
         flash[:notice] = t('flash.user_sessions.create.notice',:user => @user_session.user.login)
-          redirect_back_or_default
+          redirect_to banners_path
       else
         render :action => :new
       end

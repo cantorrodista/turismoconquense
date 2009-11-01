@@ -1,0 +1,48 @@
+<h1>Gestión de Reportajes</h1>
+
+<div class="toolbar">
+    <ul>
+    	<li><%= link_to t('app.highlight.new.link_to'), new_highlight_path, :class =>"add"%></li>
+    </ul>	
+</div>
+<% form_tag(delete_highlights_path, :method => :delete) do %>
+
+<table border="0" cellspacing="0" cellpadding="0" class="table_list">
+  <thead>
+    <tr>
+      <th><input type="checkbox" name="" value="" id="check_toggle" class="check_group" /></th>
+      <th>Nombre</th>
+      <th>Destacado principal</th>
+      <th>Destacado secundario</th>
+      <th>Publicado</th>
+      <th>Fecha</th>
+      
+      <th class="actions">
+        <span>acciones</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @highlights.each do |a| %>
+      <tr>
+        <td class="category_list_checks"><input type='checkbox' name='ids[]' value='<%=a.id%>' class="check_group" /></td>
+        <td><%= link_to(a.name, edit_highlight_url(a)) if a.name %> </td>
+        <td><%= show_status_icon(a.main_featured) %> </td>
+		<td><%= show_status_icon(a.featured) %> </td>
+        <td><%= show_status_icon(a.published) %> </td>
+        <td><%= a.date.strftime('%d-%m-%Y') %> </td>
+        
+        <td class='actions'><%= link_to('Editar', edit_highlight_url(a), :class => 'edit') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+ <p>
+            <button type="submit" class="remove_item"><span>Eliminar</span></button>
+    </p>
+<% end %>
+
+<%= will_paginate @highlights, :class => 'pagination', :prev_label => 'Anterior', :next_label => 'Siguiente' %>
+
+

@@ -1,5 +1,5 @@
 class Advertiser < ActiveRecord::Base
-  
+  include Nicenamed
   has_many :bannerss, :class_name => "banners"
   has_attached_file :logo, :default_style => :medium,
     :path => ":rails_root/" + (RAILS_ENV == 'test'? 'tmp/' : '') + "public" +
@@ -23,6 +23,12 @@ class Advertiser < ActiveRecord::Base
     validates_attachment_size :logo,
         :less_than => 10.megabyte,
         :message => I18n.translate('app.advertiser.logo.max_size')
+       
+  acts_as_polymorphic_paperclip 
+ 
+    def has_logo?
+      return true if !self.logo(:origin).include? 'missing'
+    end
 
 end
 

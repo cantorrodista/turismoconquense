@@ -1,0 +1,15 @@
+<div class="form_toolbar">
+	<ul>
+		<li>
+			<%= link_to 'Volver', categories_path, :class => "back"%> 
+		</li>
+			<li>
+				<%= link_to 'Eliminar', category_path(@category),:confirm => "Estás a punto de eliminar '#{@category.name}', ¿estás seguro?", :method => :delete, :class => "remove" %>
+			</li>
+		
+	</ul>
+</div>
+<% form_for @category, :url => category_path,
+           :html => { :multipart => true} do |f| %>
+        <%= render :partial => 'form', :locals => {:category => @category, :f => f} %>
+<% end %>

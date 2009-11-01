@@ -25,6 +25,18 @@
 			</span>
 			<%= f.label :logo, t('activerecord.attributes.advertiser.logo') %>
             <%= f.file_field :logo%></p>
+			</p>
+			<p>
+			<span id="images">
+				<% unless advertiser.new_record? %>
+					<% advertiser.assets.each do |asset|%>
+						<%= image_tag asset.url(:small) %>
+					<% end %>
+				<% end %>
+			</span>
+			<%= f.label :data, t('activerecord.attributes.advertiser.asset') %>
+  				<%= f.file_field :data%>
+			</p>
 
 
 

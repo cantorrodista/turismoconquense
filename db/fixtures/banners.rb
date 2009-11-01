@@ -57,7 +57,7 @@ Banner.seed do |s|
   s.title = 'Banner 6'
   s.url = 'http://www.iwannagothere.com'
   s.width = 470
-  s.location = 'Down'
+  s.location = 'Bottom'
   s.position = 1
 end
 
@@ -66,6 +66,6 @@ Banner.seed do |s|
   s.title = 'Banner 7'
   s.url = 'http://www.iwannagothere.com'
   s.width = 470
-  s.location = 'Down'
+  s.location = 'Bottom'
   s.position = 2
 end

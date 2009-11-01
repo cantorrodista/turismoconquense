@@ -16,6 +16,16 @@ es:
         url: Url
         description: Descripción
         logo: Logo
+        asset: Más imágenes
+      highlight:
+        name: Titulo
+        summary: Resumen para destacado principal
+        excerpt: Resumen para destacado secundario
+        body: Cuerpo
+        main_featured: Destacado principal
+        featured: Destacado secundario
+        date: Fecha publicación
+        asset: Imágenes
         
       banner:
         title: Nombre
@@ -25,6 +35,11 @@ es:
         position: Posición
         advertiser: Anunciante
         width: Ancho máximo
+        active: Activar banner
+        location: Posicion del banner
+      
+      category:
+        name: Nombre
 
 # Errores de activerecord
     errors:
@@ -171,6 +186,9 @@ es:
     pm: "pm"
 
   flash:
+    general:
+      destroy:
+        notice: Contenido borrado correctamente
     user_sessions:
       destroy:
         notice: ¡Hasta pronto!
@@ -192,8 +210,32 @@ es:
         error: Ocurrio algun error al crear el banner :S
       update:
         notice: Banner actualizado correctamente :)
-        error: Ocurrio algún error al borrar el banner :S
-        
+        error: Ocurrio algún error al actualizar el banner :S
+      destroy:
+        notice: Has borrado correctamente el banner
+      
+    highlights:
+      create:
+        notice: Reportaje creado correctamente :)
+        error: Ocurrio algun error al crear el reportaje :S
+      update:
+        notice: Reportaje actualizado correctamente :)
+        error: Ocurrio algún error al actualizar el reportaje :S
+      destroy:
+        notice: Has borrado correctamente el reportaje
+      
+
+    categories:
+      create:
+        notice: Categoría creado correctamente :)
+        error: Ocurrio algun error al crear la categoría :S
+      update:
+        notice: Categoría actualizado correctamente :)
+        error: Ocurrio algún error al actualizar la categoría :S
+      destroy:
+        notice: Has borrado correctamente la categoría
+
+      
 
   authlogic:
     error_messages:
@@ -217,7 +259,7 @@ es:
     site:
       logged_in_only: Debes iniciar sesión para ver éste contenido
     advertiser:
-      title: Anunciantes
+      title: Empresas
       logo:
         only_images: "El adjunto no esta soportado. Solo se admiten extensiones jpg, png y gif"
         max_size: "El tamaño máximo para el logo es de 10 Mb"
@@ -236,4 +278,23 @@ es:
       title: Banners
       create:
         link_to: 'Guardar'
+      new:
+        link_to: 'Nuevo Banner'
+    highlight:
+      title: Reportajes
+      create:
+        link_to: 'Guardar'
+      new:
+        link_to: 'Nuevo Reportaje'
+      edit:
+        publish: Publicar
+        save_as_draft: Borrador
+    category:
+      title: Categorías
+      create:
+        link_to: 'Guardar'
+      new:
+        link_to: 'Nueva Categoría'
+    
+      
 

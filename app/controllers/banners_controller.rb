@@ -1,7 +1,6 @@
 class BannersController < InheritedResources::Base
     
     defaults :resource_class => Banner, :collection_name => 'banners', :instance_name => 'banner'
-    actions :index, :show, :edit, :update
     respond_to :html
     before_filter :require_session, :except => [:show]
     
@@ -30,6 +29,16 @@ class BannersController < InheritedResources::Base
         end
       end
     end
+    
+    def delete
+      resource_class.destroy(params[:ids])
+      respond_to do |wants|
+        wants.html { 
+          flash[:notice] = I18n.t("flash.general.destroy.notice", :count => params[:ids].size)
+            redirect_to :action => :index 
+        }
+      end
+   end
   
     
   private

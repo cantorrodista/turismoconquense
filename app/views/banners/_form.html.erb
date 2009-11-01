@@ -13,11 +13,26 @@
               <%= f.label :url, t('activerecord.attributes.banner.url') %> <span><p>(dejar en blanco si queremos que vaya a la página del anunciante)</p></span>
               <%= f.text_field :url %>
             </p>
-			 <p>
+
+			<p>
+			  <%= f.check_box :active, :class => 'checkbox' %>
+              <%= f.label :active, t('activerecord.attributes.banner.active') %>
+            </p>
+			<% if banner.new_record? %>
+			<p>
+	              <%= f.label :location, t('activerecord.attributes.banner.location') %>
+				<%= f.select :location, options_for_select([ 'Left','Top','Bottom','Right'],banner.location)%>
+	            </p>
+			<p> 
+			<% end %>
+			<% unless banner.new_record? %>
+			
+			<p>
 	              <%= f.label :width, t('activerecord.attributes.banner.width') %>
-				<%= banner.width%> px
+				<%= banner.width %> px
 	            </p>
 			<p>
+			<% end %>
               <%= f.label :position, t('activerecord.attributes.banner.position') %>
               <%= f.select :position,options_for_select([ 1, 2,3,4,5 ],banner.position) %>
             </p>
@@ -33,7 +48,7 @@
             <p>
             <span id="logo">
 				<% unless banner.new_record? %>
-					<%= image_tag banner.image(:body_medium) if banner.is_active?%>
+					<%= image_tag banner.image(:sidebar) if banner.is_active?%>
 				<% end %>
 			</span>
 			<%= f.label :image, t('activerecord.attributes.banner.image') %>

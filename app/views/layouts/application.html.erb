@@ -27,38 +27,43 @@ onal.dtd">
 
   <div id="container">
     <div id="wrapper">
-	<% if @top_banners%>
-		<% @top_banners.each do |banner|%>
-			<%= link_to image_tag(banner.image(:body)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%>
-		<% end %>
-	<% end %>
+	
     <%= render :partial => 'layouts/header' %>
     <div id="menu">
       <%= render :partial => "layouts/menu"%>
     </div>
-    <div id="content">
-		<div id="wrapper">
-	    
+    <div id="content">	    
 			<div id="flmessages"></div>
 			<%- if app_message? -%>
 		  	<div class="flashmsg <%= app_message_type %>">
 		     <%= app_message %>
 		  	</div>
 		  <%- end %>
-	<% unless logged_in? %>
     	<div id="sidebar_left">
-			<%= render :partial => "layouts/left_sidebar"%>
+			<% unless logged_in? %>
+				<%= render :partial => "layouts/left_sidebar"%>
+			<% end %>
     	</div>
-	<% end %>
-
+		<div id="main_content">
       <%= yield -%>
-   
- <% unless logged_in? %>
+   		</div>
     	<div id="sidebar_right">
-			<%= render :partial => "layouts/right_sidebar"%>
-    	</div>
-    <% end %>
-      </div><!-- #content_home -->
+			<% unless logged_in? %>
+				<%= render :partial => "layouts/right_sidebar"%>
+    		<% end %>
+		</div>
+
+      </div><!-- #content -->
+
+	 	<% if @bottom_banners && !logged_in?%>
+		<div class="banner">	
+			<% @bottom_banners.each do |banner|%>
+				<span class="bottom"><%= link_to image_tag(banner.image(:body_medium)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></span>
+			<% end %>
+		</div>
+		<% end %>
+  </div><!-- #wrapper -->
+
     <%= render :partial => 'layouts/footer' %>
   </div><!-- #container -->
 

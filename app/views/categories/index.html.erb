@@ -1,0 +1,39 @@
+<h1>Gestión de Categorías</h1>
+
+ <div class="toolbar">
+    <ul>
+    	<li><%= link_to t('app.category.new.link_to'), new_category_path, :class =>"add"%></li>
+    </ul>	
+</div>
+<% form_tag(delete_categories_path, :method => :delete) do %>
+
+<table border="0" cellspacing="0" cellpadding="0" class="table_list">
+  <thead>
+    <tr>
+      <th><input type="checkbox" name="" value="" id="check_toggle" class="check_group" /></th>
+      <th>Nombre</th>
+
+      <th class="actions">
+        <span>acciones</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |a| %>
+      <tr>
+        <td class="category_list_checks"><input type='checkbox' name='ids[]' value='<%=a.id%>' class="check_group" /></td>
+        <td><%= link_to(a.name, edit_category_url(a)) if a.name %> </td>
+        <td class='actions'><%= link_to('Editar', edit_category_url(a), :class => 'edit') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p>
+            <button type="submit" class="remove_item"><span>Eliminar</span></button>
+    </p>
+<% end %>
+ 
+
+<%= will_paginate @categories, :class => 'pagination', :prev_label => 'Anterior', :next_label => 'Siguiente' %>
+
+

@@ -1,8 +1,11 @@
 <div class="form_toolbar">
 	<ul>
 		<li>
-			<%= link_to 'Volver', banners_path%> 
+			<%= link_to 'Volver', banners_path, :class => "back"%> 
 		</li>
+			<li>
+				<%= link_to 'Eliminar', banner_path(@banner),:confirm => "Estás a punto de eliminar '#{@banner.title}', ¿estás seguro?", :method => :delete, :class => "remove" %>
+			</li>
 		
 	</ul>
 </div>

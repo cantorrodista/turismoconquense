@@ -1,0 +1,12 @@
+<div class="form_toolbar">
+	<ul>
+		<li>
+			<%= link_to 'Volver', categories_path, :class => "back"%> 
+		</li>
+		
+	</ul>
+</div>
+<% form_for @category, :url => categories_path,
+           :html => { :multipart => true} do |f| %>
+        <%= render :partial => 'form', :locals => {:category => @category, :f => f} %>
+<% end %>

@@ -38,5 +38,13 @@ def use_tinymce
   def ie6_request?
     !(request.user_agent =~ /.+MSIE 6\..+/).nil?
   end
+  
+  def class_active(controller)
+    "class='active'" if params[:controller] == controller 
+  end
+  
+  def show_status_icon(status)
+    status == true ? '<img src="images/ok.png" alt="ok">' : '<img src="images/ko.png" alt="ko">'
+  end
 end
 

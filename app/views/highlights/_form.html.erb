@@ -1,0 +1,67 @@
+<% use_tinymce -%>
+
+
+
+        <%= f.error_messages %>
+        <fieldset>
+            <p>
+              <%= f.label :name, t('activerecord.attributes.highlight.name') %>
+              <%= f.text_field :name %>
+            </p>
+			<p>
+              <%= f.label :excerpt, t('activerecord.attributes.highlight.excerpt') %>
+              <%= f.text_field :excerpt %>
+            </p>
+            <p>
+              <%= f.label :summary, t('activerecord.attributes.highlight.summary') %>
+              <%= f.text_area :summary, :rows => "12", :cols => "20" %>
+            </p>
+            <p>
+              <%= f.label :body, t('activerecord.attributes.highlight.body') %>
+              <%= f.text_area :body, :rows => "12", :cols => "20" %>
+            </p>
+			<fieldset class="categories">
+				<legend><%= t 'app.category.title'%></legend>
+			<ul>
+				 <%- Category.find(:all, :order => :name).each do |category| -%>
+		              <li>  
+		              
+		                <input name="highlight[category_ids][]" id="highlight_categories_<%= category.id %>" value="<%= category.id %>" class="checkbox" type="checkbox"<%= ' checked="checked"' if highlight.categories.include?(category) %> />
+						<%= f.label "categories_#{category.id}", category.name %>
+		              </li>
+		            <%- end -%>
+				</ul>
+			</fieldset>
+			<p>
+			<span id="images">
+				<% unless highlight.new_record? %>
+					<% highlight.assets.each do |asset|%>
+						<%= image_tag asset.url(:small) %>
+						<div><%= link_to 'Borrar imagen',detach_highlight_path(:asset_id => asset.id) %></div>
+						
+					<% end %>
+				<% end %>
+			</span>
+			<%= f.label :data, t('activerecord.attributes.highlight.asset') %>
+  				<%= f.file_field :data%>
+			</p>
+			<p>
+				<%= f.check_box :main_featured , :class => 'checkbox'%>             
+              <%= f.label :main_featured, t('activerecord.attributes.highlight.main_featured') %>
+            </p>
+			<p>
+				<%= f.check_box :featured , :class => 'checkbox'%>
+              <%= f.label :featured, t('activerecord.attributes.highlight.featured') %>
+            </p>
+			<p>
+              <%= f.label :date, t('activerecord.attributes.highlight.date') %>
+			<%= f.date_select :date, :order => [:day, :month,:year], :start_year => 2006, :end_year => Time.now.year+10 %>            </p>
+			
+
+
+
+
+		<%= f.submit t('app.highlight.edit.save_as_draft') %>
+
+        <%= f.submit t('app.highlight.edit.publish'), :name => 'highlight[published]'%>
+

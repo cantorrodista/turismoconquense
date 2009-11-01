@@ -9,17 +9,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091012120039) do
+ActiveRecord::Schema.define(:version => 20091101165422) do
 
   create_table "advertisers", :force => true do |t|
     t.string   "name"
     t.string   "url"
-    t.string   "description"
+    t.text     "description"
     t.string   "logo_file_name"
     t.string   "logo_mime_type", :limit => 64
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nicename"
   end
+
+  create_table "assets", :force => true do |t|
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "attachings_count",  :default => 0
+    t.datetime "created_at"
+    t.datetime "data_updated_at"
+  end
+
+  create_table "attachings", :force => true do |t|
+    t.integer  "attachable_id"
+    t.integer  "asset_id"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachings", ["asset_id"], :name => "index_attachings_on_asset_id"
+  add_index "attachings", ["attachable_id"], :name => "index_attachings_on_attachable_id"
 
   create_table "banners", :force => true do |t|
     t.string   "title"
@@ -32,8 +53,38 @@ ActiveRecord::Schema.define(:version => 20091012120039) do
     t.integer  "advertiser_id"
     t.string   "image_file_name"
     t.string   "image_mime_type", :limit => 64
+    t.boolean  "active",                        :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.string   "nicename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "highlight_categories", :force => true do |t|
+    t.integer "highlight_id"
+    t.integer "category_id"
+  end
+
+  add_index "highlight_categories", ["highlight_id", "category_id"], :name => "highlight_categories_index", :unique => true
+
+  create_table "highlights", :force => true do |t|
+    t.string   "name",          :default => "",    :null => false
+    t.string   "nicename",      :default => "",    :null => false
+    t.text     "summary"
+    t.text     "body"
+    t.boolean  "main_featured", :default => false, :null => false
+    t.boolean  "featured",      :default => false, :null => false
+    t.boolean  "published",     :default => false, :null => false
+    t.boolean  "closed",        :default => false, :null => false
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "excerpt"
   end
 
   create_table "users", :force => true do |t|

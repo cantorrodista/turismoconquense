@@ -19,3 +19,12 @@
 [submodule "vendor/plugins/will_paginate"]
 	path = vendor/plugins/will_paginate
 	url = git://github.com/mislav/will_paginate.git
+[submodule "vendor/plugins/acts_as_list"]
+	path = vendor/plugins/acts_as_list
+	url = git://github.com/rails/acts_as_list.git
+[submodule "vendor/plugins/translate_routes"]
+	path = vendor/plugins/translate_routes
+	url = git://github.com/raul/translate_routes.git
+[submodule "vendor/plugins/paperclip_polymorph"]
+	path = vendor/plugins/paperclip_polymorph
+	url = git://github.com/heavysixer/paperclippolymorph.git

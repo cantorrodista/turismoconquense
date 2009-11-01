@@ -8,7 +8,7 @@ tinyMCE.init({
 //    });
 //  },
   mode:"exact",
-  elements : "advertiser_description, banner_body",
+  elements : "advertiser_description, banner_body, highlight_body, highlight_summary",
 //  onpageload:"EditorControl.init",
   theme:"advanced",
   theme_advanced_buttons1:"bold,italic,strikethrough,removeformat,link,unlink,blockquote,numlist,bullist,undo,redo,justifyleft,justifycenter,justifyright,hr,fontselect,bigsmall,forecolor,image,image_align_left,image_align_center,image_align_right,emotions,pasteword,code",

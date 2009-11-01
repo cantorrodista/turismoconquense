@@ -11,6 +11,7 @@ class CreateBanners < ActiveRecord::Migration
       t.integer :advertiser_id
       t.string :image_file_name,    :null => true
       t.string :image_mime_type,    :null => true, :limit => 64
+      t.boolean :active, :default => true
       t.timestamps
     end
   end

@@ -1,12 +1,19 @@
 
 <div id="header">
 
-    <h1><%= link_to 'Ocio Ciudad Real',root_path %></h1>
+    <h1><a href="/"><span>Ocio Ciudad Real</span></a></h1>
     <div id="top_bar">
         <% if logged_in?%>
  			<%= render :partial => "layouts/small_menu"%>
 		<% end 	%>
 		
     </div>
+	<% if @top_banners && !logged_in?%>
+		<% @top_banners.each do |banner|%>
+		<div class="banner top">
+			<%= link_to image_tag(banner.image(:body)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></div>
+			
+		<% end %>
+	<% end %>
   </div>
 

@@ -1,1 +1,29 @@
-<h1>Home!!!!</h1>
+<h2 class="main">Tu guia del ocio en Ciudad Real</h2>
+
+	<div id="main_featured">
+	 <h3><%= link_to @main_featured.name, highlight_path(@main_featured)%></h3>
+		<h4><span class="category"><%= link_to @main_featured.categories.first.name, highlights_categories_path(@main_featured.categories.first.nicename)%></span></h4>
+	 	<% unless @main_featured.assets.blank?%>
+			<div id="main_featured_image">
+				<%= image_tag @main_featured.assets.first.url(:small)%>
+			</div>
+		<% end %>
+	<%=@main_featured.summary%>
+	</div>
+
+	<div id="featured">
+		<% @featureds.each do |highlight|%>
+			<div class="small">
+	 			<% unless highlight.assets.blank?%>
+					<div id="featured_image">
+						<%= image_tag highlight.assets.first.url(:tiny)%>
+					</div>
+				<% end %>
+				<div id="text">
+					<h4><span class="category"><%= link_to highlight.categories.first.name, highlights_categories_path(highlight.categories.first.nicename) unless highlight.categories.blank?%>: </span><%= link_to highlight.name, highlight_path(highlight)%></h4>
+					<%=highlight.excerpt%>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
