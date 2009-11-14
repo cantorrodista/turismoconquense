@@ -10,7 +10,7 @@ defaults: &defaults
       small_size: "65x65#"
   banner:    
     image:
-      body_medium: "480x480>"
+      body_medium: "470x470>"
       body: "670x270>"
       sidebar: "180x1000>"
     

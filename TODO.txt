@@ -1,8 +1,11 @@
 
-- Modelo polimorfico de fotos, rollo neutrino para poder meter mas fotos
-- Publireportajes - noticias con title, excerpt, body, fotos, etc etc  y categorizados a tope
+ DONE ----- Modelo polimorfico de fotos, rollo neutrino para poder meter mas fotos 
+ DONE------ - Publireportajes - noticias con title, excerpt, body, fotos, etc etc  y categorizados a tope
 
-- Publireportajes y noticias es lo mismo , solo cambia la manera de destacarse en la home : habra destacado principal y destacado secundario.
+DONE------ - Publireportajes y noticias es lo mismo , solo cambia la manera de destacarse en la home : habra destacado principal y destacado secundario.
+
+
+
 
 las noticias se puedes valorar y comentar. dEspues poner bloque en la home con lo + cometnado y +  valorado
 tags para noticias con bloque en la home

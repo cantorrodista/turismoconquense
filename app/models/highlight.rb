@@ -10,7 +10,7 @@ class Highlight < ActiveRecord::Base
   acts_as_polymorphic_paperclip
 
   validates_length_of :name, :minimum => 3
-  validates_presence_of :summary, :if => :published?
+  #validates_presence_of :summary, :if => :published?
   validates_presence_of :body, :if => :published?
   validates_presence_of :categories, :if => :published?
   

@@ -1,5 +1,5 @@
 body {
-  font-family: Arial,sans-serif;
+  font-family: Georgia,sans-serif;
   font-size: x-small;
   font-variant: normal;
   font-style: normal;
@@ -27,7 +27,6 @@ a {
 }
 
 #header {
-  height: 13em;
   background: #FFFFFF;
   margin: 0 auto;
 
@@ -49,7 +48,9 @@ a {
 }
 
 
-
+#top_bar{
+	height: 3em;
+}
 #top_bar ul{
     float: right;
     margin: 1.5em 1em 0 0;
@@ -80,7 +81,7 @@ a {
 }
 
 #menu .active a {
-  background:#FEF4DF;
+  background:#FF9801;
   color:#493E2B;
   padding-left:0;
 }
@@ -99,10 +100,8 @@ a {
   font-weight:normal;
   height:1.6em;
   margin-left:0.5em;
-  margin-top:1em;
   padding-top:0.3em;
   text-align:center;
-  margin-top: 2em;
   text-decoration:none;
   width:7.7em;
 }
@@ -115,14 +114,43 @@ a {
 
 
 }
-#footer{
-  margin-top: 1.5em;
-  
-  background: transparent url(../images/footer.gif) repeat-x scroll 0 0;
-
+#footer {
+	background-color:#111111;
+	border-top:1px solid #000000;
+	clear:both;
+	color:#CCCCCC;
+	margin-top: 2em;
+	height: 30em;
+}
+#footer #footer_content{
+	margin-left: 2em;
 }
 #footer ul{
-	margin-right: 2em;
+	padding: 2em 0em;
+	margin-right: 6em;
+	float: left;
+}
+
+#footer ul li a{
+	text-decoration: none;
+	font-size: 1.4em;
+	line-height:1.5em;
+} 
+#footer h2{
+	background:transparent url(../images/activa2black_small.jpg) no-repeat scroll center center;
+	float:right;
+	font-size:x-small;
+	height:20.3em;
+	width:35em;
+}
+#footer h2 span{
+	display:none;
+}
+#footer h3{
+	border-bottom:2px solid #FF9801;
+	font-size:2em;
+	margin:0 0 0.4em;
+	padding:0 0 0.4em	
 }
 #content{
   margin: 0 auto;
@@ -313,7 +341,7 @@ a {
 }
 #content h1 {
 	border-bottom:1px solid #C0C7CB;
-	font-family:gotham,arial,sans-serif;
+	font-family:Georgia,arial,sans-serif;
 	font-size:2em;
 	font-weight:bold;
 	line-height:1em;
@@ -323,7 +351,7 @@ a {
 
 #content #main_content h2.main{
 	border-bottom:1.5px solid #C0C7CB;
-	font-family:gotham,arial,sans-serif;
+	font-family:Georgia,arial,sans-serif;
 	font-size:2.8em;
 	font-weight:bold;
 	line-height:1em;
@@ -336,7 +364,7 @@ a {
 	color: #666;
 }
 #content h3 {
-	font-family:gotham,arial,sans-serif;
+	font-family:Georgia,arial,sans-serif;
 	font-size:1.4em;
 	font-weight:bold;
 	line-height:1.4em;
@@ -348,10 +376,10 @@ a {
 }
 #content h4 a{
 	text-decoration: none;
-	color: #FF9933;
+	color: #FF9801;
 }
 #content h4 span{
-	color: #FF9933;
+	color: #FF9801;
 }
  
 .table_list {
@@ -430,11 +458,12 @@ input.checkbox {
 
 .banner{
 	margin: 0 auto;
-	margin-top: 1em;
+	margin-top: 1.5em;
 }
 
 .banner.top{
-	padding-top: 2em;
+	margin-top: 0em;
+	padding: 1em 0em 1em 0em;
 }
 
 .banner img{
@@ -443,10 +472,11 @@ input.checkbox {
 	display: block;
 }
 
-.banner span img{
-	margin: 0 auto;
-	display: inline;
+.banner .bottom {
+	display: block;
+	float: left;
 	margin-left:  0.4em;
+	margin-bottom: 2em;
 }
 
 /*Paginación*/
@@ -475,7 +505,7 @@ input.checkbox {
 #main_featured{
 	height: 19em;
 	overflow: hidden;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	border-bottom:1.5px solid #C0C7CB;
 	
 }

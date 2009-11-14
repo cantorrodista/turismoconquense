@@ -58,14 +58,14 @@ onal.dtd">
 	 	<% if @bottom_banners && !logged_in?%>
 		<div class="banner">	
 			<% @bottom_banners.each do |banner|%>
-				<span class="bottom"><%= link_to image_tag(banner.image(:body_medium)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></span>
+				<div class="bottom"><%= link_to image_tag(banner.image(:body_medium)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></div>
 			<% end %>
 		</div>
 		<% end %>
   </div><!-- #wrapper -->
 
-    <%= render :partial => 'layouts/footer' %>
   </div><!-- #container -->
+  <%= render :partial => 'layouts/footer' %>
 
 <% if asset_packager? %>
   <%= javascript_include_merged :base %>

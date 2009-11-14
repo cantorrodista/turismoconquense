@@ -1,6 +1,7 @@
 <h2 class="main">Tu guia del ocio en Ciudad Real</h2>
 
 	<div id="main_featured">
+		<% if @main_featured %>
 	 <h3><%= link_to @main_featured.name, highlight_path(@main_featured)%></h3>
 		<h4><span class="category"><%= link_to @main_featured.categories.first.name, highlights_categories_path(@main_featured.categories.first.nicename)%></span></h4>
 	 	<% unless @main_featured.assets.blank?%>
@@ -9,6 +10,7 @@
 			</div>
 		<% end %>
 	<%=@main_featured.summary%>
+	<% end %>
 	</div>
 
 	<div id="featured">
