@@ -340,7 +340,7 @@ a {
 	background: url('../../images/add.png') no-repeat left center;;
 }
 #content h1 {
-	border-bottom:1px solid #C0C7CB;
+	border-bottom:1px solid #FF9801;
 	font-family:Georgia,arial,sans-serif;
 	font-size:2em;
 	font-weight:bold;
@@ -350,7 +350,7 @@ a {
 }
 
 #content #main_content h2.main{
-	border-bottom:1.5px solid #C0C7CB;
+	border-bottom:1.5px solid #FF9801;
 	font-family:Georgia,arial,sans-serif;
 	font-size:2.8em;
 	font-weight:bold;
@@ -506,7 +506,7 @@ input.checkbox {
 	height: 19em;
 	overflow: hidden;
 	font-size: 1.4em;
-	border-bottom:1.5px solid #C0C7CB;
+	border-bottom:1.5px solid #FF9801;
 	
 }
 #main_featured #main_featured_image{
@@ -536,4 +536,12 @@ input.checkbox {
 }
  #featured #text{
 	padding: 0.6em 0.6em 0.4em 0;
+}
+
+#advertisers #main_content #advertiser_body{
+	padding-top: 2em;
+}
+
+#advertisers #main_content #advertiser_body p{
+	font-size: 1.4em;
 }
