@@ -7,7 +7,7 @@ class Highlight < ActiveRecord::Base
    # :order => 'created_at ASC'
   
   #acts_as_rated :rating_range => 1..5
-  acts_as_polymorphic_paperclip
+  acts_as_polymorphic_paperclip :styles => Settings.highlight.assets.styles
 
   validates_length_of :name, :minimum => 3
   #validates_presence_of :summary, :if => :published?
@@ -17,7 +17,7 @@ class Highlight < ActiveRecord::Base
   named_scope :drafts,:conditions => ['published = ?', false], :order => 'created_at DESC'
   named_scope :published,:conditions => ['published = ?', true], :order => 'created_at DESC'
   named_scope :main_featured,:conditions => ['main_featured = ?', true], :limit => 1
-  named_scope :featured,:conditions => ['featured = ?', true],:order => 'created_at DESC'
+  named_scope :featured,:conditions => ['featured = ?', true],:order => 'created_at DESC', :limit => 10
   
   
 end

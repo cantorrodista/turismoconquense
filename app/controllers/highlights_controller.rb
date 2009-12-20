@@ -13,6 +13,7 @@ class HighlightsController < InheritedResources::Base
       end
     end
   end 
+
   
   def create
       create! do |success, failure|

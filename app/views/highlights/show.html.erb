@@ -1,0 +1,12 @@
+<div class="highlight">
+
+<h2 class="main"><%=  @highlight.name %></h2>
+<dl>
+        <dt>Publicado en: </dt>
+        <dd><%= category_links @highlight %></dd>
+</dl>
+
+<p class="date"><%=l(@highlight.date, :format => 'simple_date')%></p>
+
+	<p><%= @highlight.body%></p>
+</div>

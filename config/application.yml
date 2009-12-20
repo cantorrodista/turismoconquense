@@ -3,11 +3,25 @@ defaults: &defaults
     admin_email: cantorrodista@gmail.com
     include_for_asset_packager: 0
     url: "http://localhost:3000"
+    
+  highlight:
+    assets:
+      styles:
+        big_size: "250x250#"
+        medium_size: "210x210>"
+        small_size: "80x80#"
+
   advertiser:
+    assets:
+      styles:
+        big_size: "250x250#"
+        medium_size: "128x128#"
+        small_size: "65x65#"
     logo:
       big_size: "250x250#"
       medium_size: "128x128#"
       small_size: "65x65#"
+
   banner:    
     image:
       body_medium: "470x470>"

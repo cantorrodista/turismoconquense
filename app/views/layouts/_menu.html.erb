@@ -1,7 +1,7 @@
 <ul>
 		<% unless logged_in? %>
 		<li <%= class_active('home')%>><%= link_to 'Inicio', root_path%></li>
-		<li <%= class_active('')%>><a href="#">Noticias</a></li>
+		<li <%= class_active('highlights')%>><%= link_to 'Noticias', highlights_path%></li>
 		<li <%= class_active('')%>><a href="#">Eventos</a></li>
 		<li <%= class_active('advertisers')%>><%= link_to t('app.advertiser.title'), advertisers_path%></li>
 		<li <%= class_active('')%>><a href="#">Contacto</a></li>

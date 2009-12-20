@@ -46,5 +46,17 @@ def use_tinymce
   def show_status_icon(status)
     status == true ? '<img src="images/ok.png" alt="ok">' : '<img src="images/ko.png" alt="ko">'
   end
+  
+  
+  def category_links(resource=nil)
+    if resource
+      resource.categories.map do |category|
+            link_to category.name,
+            send("#{resource.class.table_name}_categories_path", category.nicename)
+      end.join(', ')
+    end
+  end
+  
+  
 end
 

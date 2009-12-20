@@ -6,7 +6,7 @@
 		<h4><span class="category"><%= link_to @main_featured.categories.first.name, highlights_categories_path(@main_featured.categories.first.nicename)%></span></h4>
 	 	<% unless @main_featured.assets.blank?%>
 			<div id="main_featured_image">
-				<%= image_tag @main_featured.assets.first.url(:small)%>
+				<%= image_tag @main_featured.assets.first.url(:medium_size)%>
 			</div>
 		<% end %>
 	<%=@main_featured.summary%>
@@ -18,7 +18,7 @@
 			<div class="small">
 	 			<% unless highlight.assets.blank?%>
 					<div id="featured_image">
-						<%= image_tag highlight.assets.first.url(:tiny)%>
+						<a href="<%= highlight_path(highlight)%>"><%= image_tag highlight.assets.first.url(:small_size)%></a>
 					</div>
 				<% end %>
 				<div id="text">

@@ -18,7 +18,7 @@
             </p>
             <p>
               <%= f.label :body, t('activerecord.attributes.highlight.body') %>
-              <%= f.text_area :body, :rows => "12", :cols => "20" %>
+              <%= f.text_area :body, :rows => "40", :cols => "20" %>
             </p>
 			<fieldset class="categories">
 				<legend><%= t 'app.category.title'%></legend>
@@ -36,7 +36,7 @@
 			<span id="images">
 				<% unless highlight.new_record? %>
 					<% highlight.assets.each do |asset|%>
-						<%= image_tag asset.url(:small) %>
+						<%= image_tag asset.url(:medium_size) %>
 						<div><%= link_to 'Borrar imagen',detach_highlight_path(:asset_id => asset.id) %></div>
 						
 					<% end %>

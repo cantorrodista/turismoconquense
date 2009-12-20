@@ -179,6 +179,7 @@ es:
       short_twenergy: "%d/%b/%Y"
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       short: "%d de %b %H:%M"
+      simple_date: "%d de %B de %Y"
       long: "%d de %B de %Y %H:%M"
       forum_topic_admin: "%d de %B de %Y %H:%M:%S"
 

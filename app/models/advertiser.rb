@@ -24,7 +24,7 @@ class Advertiser < ActiveRecord::Base
         :less_than => 10.megabyte,
         :message => I18n.translate('app.advertiser.logo.max_size')
        
-  acts_as_polymorphic_paperclip 
+  acts_as_polymorphic_paperclip :styles => Settings.advertiser.assets.styles
  
     def has_logo?
       return true if !self.logo(:origin).include? 'missing'

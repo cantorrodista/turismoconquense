@@ -6,5 +6,5 @@ es:
   banners: banners
   advertisers: empresas
   user_session: sesion
-  highlights: reportajes
-  categories: seccion
+  highlights: noticias
+  categories: categoria

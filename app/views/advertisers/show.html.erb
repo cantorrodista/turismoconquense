@@ -1,10 +1,11 @@
 <h2 class="main"><%= link_to @advertiser.name , @advertiser.url, :rel => 'nofollow'%></h2>
+
 <% if @advertiser.has_logo? %>
 	<div id="advertiser_image">
 		<%= image_tag @advertiser.logo(:big)%>
 	</div>
 <% end %>
-	<div id="advertiser_body">
+	<div class="content_body">
 		<%= @advertiser.description%>
 	</div>
 	
