@@ -2,6 +2,7 @@ class CategoriesController < InheritedResources::Base
   defaults :resource_class => Category, :collection_name => 'categories', :instance_name => 'category'
   respond_to :html
   before_filter :require_session
+  include NicenamedResource
   
   def create
       create! do |success, failure|
@@ -20,7 +21,7 @@ class CategoriesController < InheritedResources::Base
     update!  do |success, failure|
       success.html do
         flash[:notice] = t("flash.categories.update.notice")
-        redirect_to edit_banner_path(@banner)
+        redirect_to categories_path
       end
       failure.html do
         flash[:notice] = t("flash.categories.update.error")

@@ -26,6 +26,8 @@ es:
         featured: Destacado secundario
         date: Fecha publicación
         asset: Imágenes
+        start_date: Comienza el
+        end_date: Acaba el
         
       banner:
         title: Nombre
@@ -40,6 +42,7 @@ es:
       
       category:
         name: Nombre
+        visible: Visible en el front
 
 # Errores de activerecord
     errors:

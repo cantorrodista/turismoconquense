@@ -12,7 +12,8 @@
     <tr>
       <th><input type="checkbox" name="" value="" id="check_toggle" class="check_group" /></th>
       <th>Nombre</th>
-
+	  <th>Visible en el front</th>
+    
       <th class="actions">
         <span>acciones</span>
       </th>
@@ -23,6 +24,8 @@
       <tr>
         <td class="category_list_checks"><input type='checkbox' name='ids[]' value='<%=a.id%>' class="check_group" /></td>
         <td><%= link_to(a.name, edit_category_url(a)) if a.name %> </td>
+        <td><%= show_status_icon(a.visible)%> </td>
+
         <td class='actions'><%= link_to('Editar', edit_category_url(a), :class => 'edit') %></td>
       </tr>
     <% end %>

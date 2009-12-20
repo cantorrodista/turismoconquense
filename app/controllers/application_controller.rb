@@ -57,10 +57,11 @@ class ApplicationController < ActionController::Base
     end
     
     def load_banners
-      @top_banners = Banner.by_location('Top')
-      @left_banners = Banner.by_location('Left')
-      @right_banners = Banner.by_location('Right')
-      @bottom_banners = Banner.by_location('Bottom')
+      category = params[:category] ? params[:category] : 'home'        
+      @top_banners = Banner.by_location('Top').by_category(category)
+      @left_banners = Banner.by_location('Left').by_category(category)
+      @right_banners = Banner.by_location('Right').by_category(category)
+      @bottom_banners = Banner.by_location('Bottom').by_category(category)
     end
 
 end

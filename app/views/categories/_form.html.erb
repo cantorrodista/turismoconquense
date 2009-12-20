@@ -4,7 +4,10 @@
       <%= f.label :name, t('activerecord.attributes.category.name') %>
       <%= f.text_field :name %>
     </p>
-  
+ 	<p>
+  		<%= f.check_box :visible, :class => 'checkbox' %>
+          <%= f.label :visible, t('activerecord.attributes.category.visible') %>
+    </p>
 
 
 

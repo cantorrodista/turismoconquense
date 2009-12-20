@@ -23,7 +23,7 @@
 			<fieldset class="categories">
 				<legend><%= t 'app.category.title'%></legend>
 			<ul>
-				 <%- Category.find(:all, :order => :name).each do |category| -%>
+				 <%- Category.find(:all, :order => :name, :conditions => "visible = 1").each do |category| -%>
 		              <li>  
 		              
 		                <input name="highlight[category_ids][]" id="highlight_categories_<%= category.id %>" value="<%= category.id %>" class="checkbox" type="checkbox"<%= ' checked="checked"' if highlight.categories.include?(category) %> />
@@ -32,6 +32,18 @@
 		            <%- end -%>
 				</ul>
 			</fieldset>
+			<fieldset class="categories">
+				<legend>Sólo para eventos</legend>
+			<p>
+              <%= f.label :start_date, t('activerecord.attributes.highlight.start_date') %>
+			  <%= f.date_select :start_date, :order => [:day, :month,:year], :start_year => 2006, :end_year => Time.now.year+10 %>
+            </p>
+			<p>
+              <%= f.label :end_date, t('activerecord.attributes.highlight.end_date') %>
+			  <%= f.date_select :end_date, :order => [:day, :month,:year], :start_year => 2006, :end_year => Time.now.year+10 %>
+            </p>
+			</fieldset>
+			
 			<p>
 			<span id="images">
 				<% unless highlight.new_record? %>
@@ -55,7 +67,8 @@
             </p>
 			<p>
               <%= f.label :date, t('activerecord.attributes.highlight.date') %>
-			<%= f.date_select :date, :order => [:day, :month,:year], :start_year => 2006, :end_year => Time.now.year+10 %>            </p>
+			<%= f.date_select :date, :order => [:day, :month,:year], :start_year => 2006, :end_year => Time.now.year+10 %>
+            </p>
 			
 
 

@@ -1,11 +1,16 @@
 class Banner < ActiveRecord::Base
 
   belongs_to :advertiser
-  
+  has_many :banner_categories
+  has_many :categories, :through => :banner_categories
   named_scope :by_location, lambda { |block| 
     {:conditions => " location = '#{block}' AND active = 1", :order => :position}
    }
-   
+  
+  named_scope :by_category, lambda { |nicename|
+    category = Category.find_by_nicename(nicename) 
+   {:include => [:banner_categories],:conditions =>["banner_categories.category_id = ?", category.id], :order => :position}
+  } 
   has_attached_file :image, :default_style => :medium,:default_url => "",
   
   :path => ":rails_root/" + (RAILS_ENV == 'test'? 'tmp/' : '') + "public" +

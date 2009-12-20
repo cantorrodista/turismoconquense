@@ -18,6 +18,19 @@
 			  <%= f.check_box :active, :class => 'checkbox' %>
               <%= f.label :active, t('activerecord.attributes.banner.active') %>
             </p>
+			<fieldset class="categories">
+				<legend><%= t 'app.category.title'%></legend>
+			<ul>
+				 <%- Category.find(:all, :order => :name).each do |category| -%>
+		              <li>  
+		              
+		                <input name="banner[category_ids][]" id="banner_categories_<%= category.id %>" value="<%= category.id %>" class="checkbox" type="checkbox"<%= ' checked="checked"' if banner.categories.include?(category) %> />
+						<%= f.label "categories_#{category.id}", category.name %>
+		              </li>
+		            <%- end -%>
+				</ul>
+			</fieldset>
+
 			<% if banner.new_record? %>
 			<p>
 	              <%= f.label :location, t('activerecord.attributes.banner.location') %>

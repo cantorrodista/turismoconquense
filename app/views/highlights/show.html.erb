@@ -9,4 +9,7 @@
 <p class="date"><%=l(@highlight.date, :format => 'simple_date')%></p>
 
 	<p><%= @highlight.body%></p>
+<% if @highlight.is_event?%>	
+	<p class="date">Empieza el <%=l(@highlight.start_date, :format => 'simple_date')%> y acaba el <%=l(@highlight.end_date, :format => 'simple_date')%></p>
+<% end %>
 </div>

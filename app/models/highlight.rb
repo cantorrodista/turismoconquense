@@ -19,5 +19,7 @@ class Highlight < ActiveRecord::Base
   named_scope :main_featured,:conditions => ['main_featured = ?', true], :limit => 1
   named_scope :featured,:conditions => ['featured = ?', true],:order => 'created_at DESC', :limit => 10
   
-  
+  def is_event?
+    self.categories.include?(Category.find_by_nicename('eventos'))
+  end
 end
