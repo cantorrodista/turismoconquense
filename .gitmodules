@@ -28,3 +28,6 @@
 [submodule "vendor/plugins/paperclippolymorph"]
 	path = vendor/plugins/paperclippolymorph
 	url = git://github.com/cantorrodista/paperclippolymorph.git
+[submodule "vendor/plugins/acts-as-taggable-on"]
+	path = vendor/plugins/acts-as-taggable-on
+	url = git://github.com/mbleigh/acts-as-taggable-on.git
