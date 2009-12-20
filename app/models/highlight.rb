@@ -8,7 +8,8 @@ class Highlight < ActiveRecord::Base
   
   #acts_as_rated :rating_range => 1..5
   acts_as_polymorphic_paperclip :styles => Settings.highlight.assets.styles
-
+  acts_as_taggable_on :tags, :navigation
+  
   validates_length_of :name, :minimum => 3
   #validates_presence_of :summary, :if => :published?
   validates_presence_of :body, :if => :published?

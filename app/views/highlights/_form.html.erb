@@ -18,7 +18,7 @@
             </p>
             <p>
               <%= f.label :body, t('activerecord.attributes.highlight.body') %>
-              <%= f.text_area :body, :rows => "40", :cols => "20" %>
+              <%= f.text_area :body, :rows => "30", :cols => "20" %>
             </p>
 			<fieldset class="categories">
 				<legend><%= t 'app.category.title'%></legend>
@@ -43,7 +43,20 @@
 			  <%= f.date_select :end_date, :order => [:day, :month,:year], :start_year => 2006, :end_year => Time.now.year+10 %>
             </p>
 			</fieldset>
-			
+			<fieldset class="categories">
+				<legend>Tags</legend>
+				<span>Separados por comas</span>
+				<p>
+	              <%= f.label :tag_list, t('activerecord.attributes.highlight.tag_list') %>
+	              <%= f.text_field :tag_list %>
+	            </p>
+				<p>
+	              <%= f.label :navigation_list, t('activerecord.attributes.highlight.navigation_list') %>
+	              <%= f.text_field :navigation_list %>
+	            </p>
+	            	
+			</fieldset>
+		
 			<p>
 			<span id="images">
 				<% unless highlight.new_record? %>

@@ -190,6 +190,7 @@ a {
 #content form fieldset p {
   margin-bottom: 2em;
   overflow: hidden;
+	padding-left: 0.8em;
 }
 
 #content form fieldset label {
@@ -214,6 +215,7 @@ a {
 
 #content form fieldset.categories {
   border: 1px solid #CECECE;
+	margin-bottom: 0.8em;
 }
 
 #content form fieldset.categories ul {

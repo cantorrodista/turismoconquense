@@ -28,6 +28,8 @@ es:
         asset: Imágenes
         start_date: Comienza el
         end_date: Acaba el
+        tag_list: Tags para el contenido
+        navigation_list: Tags para navegación
         
       banner:
         title: Nombre
