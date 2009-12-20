@@ -25,6 +25,6 @@
 [submodule "vendor/plugins/translate_routes"]
 	path = vendor/plugins/translate_routes
 	url = git://github.com/raul/translate_routes.git
-[submodule "vendor/plugins/paperclip_polymorph"]
-	path = vendor/plugins/paperclip_polymorph
-	url = git://github.com/heavysixer/paperclippolymorph.git
+[submodule "vendor/plugins/paperclippolymorph"]
+	path = vendor/plugins/paperclippolymorph
+	url = git://github.com/cantorrodista/paperclippolymorph.git
