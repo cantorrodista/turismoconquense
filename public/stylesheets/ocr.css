@@ -742,3 +742,25 @@ GENERIC TABLES
 	margin:0 0 0.4em;
 	padding:0 0 0.4em;
 }
+
+
+/* ******************************************************
+WYSWYG STYLES
+********************************************************/
+
+.imgizqda {
+    float: left;
+    margin: 0 5px 5px 0;
+}
+.imgcen {
+    display: block;
+    margin: 5px auto;
+    padding: 5px 0;
+}
+.imgdcha {
+    float: right;
+    margin: 0 0 5px 5px;	
+}
+.acenter {
+    text-align: center;
+}
