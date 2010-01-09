@@ -2,16 +2,14 @@ class Highlight < ActiveRecord::Base
   include Nicenamed
   has_many :highlight_categories
   has_many :categories, :through => :highlight_categories
-  #has_many :tags, :through => :highlight_tags
-  #has_many :comments, :as => :commentable, :dependent => :destroy, 
-   # :order => 'created_at ASC'
-  
+
   #acts_as_rated :rating_range => 1..5
   acts_as_polymorphic_paperclip :styles => Settings.highlight.assets.styles
   acts_as_taggable_on :tags, :navigation
+  has_many :comments, :as => :commentable, :dependent => :destroy, 
+    :order => 'created_at ASC'
   
   validates_length_of :name, :minimum => 3
-  #validates_presence_of :summary, :if => :published?
   validates_presence_of :body, :if => :published?
   validates_presence_of :categories, :if => :published?
   

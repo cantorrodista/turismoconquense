@@ -1,5 +1,5 @@
 <div class="highlight">
-	<h2 class="main">Últimas noticias</h2>
+	<h2 class="main"><%= get_highlight_title%></h2>
 	<% collection.each do |highlight|%>
 	<div class="detail_highlight">		
 		<h3><%= link_to highlight.name,highlight_path(highlight)%></h3>

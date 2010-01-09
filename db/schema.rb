@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091220194412) do
+ActiveRecord::Schema.define(:version => 20100102102139) do
 
   create_table "advertisers", :force => true do |t|
     t.string   "name"
@@ -72,6 +72,20 @@ ActiveRecord::Schema.define(:version => 20091220194412) do
     t.datetime "updated_at"
     t.boolean  "visible",    :default => true
   end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.string   "uri",              :limit => 64
+    t.string   "name",             :limit => 128
+    t.string   "email",            :limit => 128
+    t.string   "IP",               :limit => 15
+    t.text     "message"
+    t.boolean  "published",                       :default => false, :null => false
+    t.datetime "created_at",                                         :null => false
+  end
+
+  add_index "comments", ["commentable_type", "commentable_id", "created_at"], :name => "commentable_type_and_commentable_id_and_created_at"
 
   create_table "highlight_categories", :force => true do |t|
     t.integer "highlight_id"

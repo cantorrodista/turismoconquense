@@ -1,0 +1,37 @@
+<% form_for flash[:comment] || Comment.new, :url => comments_path do |f| %>
+    <%- if flash[:new_comment_errors] -%>
+    <div class="errorExplanation rounded_corners" id="errorExplanation">
+        <%= flash[:new_comment_errors] %>
+    </div>
+    <%- end -%>
+    <%= f.hidden_field :commentable_type, :value => resource.class %>
+    <%= f.hidden_field :commentable_id, :value => resource.id %>
+    <fieldset class="rounded_corners">
+        <fieldset class="comment_block">
+            <fieldset class="comment_cont">
+            <span class="anonymous_form_fields">
+                <p>
+                    <%= f.label :name, t('activerecord.attributes.comment.name') %>
+                    <%= f.text_field :name %>
+                </p>
+                <p>
+                    <%= f.label :email, t('activerecord.attributes.comment.email') %>
+                    <%= f.text_field :email, { :class => 'required' } %>
+                </p>
+                <p>
+                    <%= f.label :uri, t('activerecord.attributes.comment.uri') %>
+                    <%= f.text_field :uri %>
+                    <%= t('app.comments.uri_optional') -%>
+                </p>
+            </span>
+            <p>
+                <%= f.label :message, t('activerecord.attributes.comment.message') %>
+                <%= f.text_area :message, :rows => "8", :cols => "38" %>
+            </p>
+
+            </fieldset>
+
+            <button class="highlight" type="submit">Enviar Comentario</button>
+        </fieldset>
+    </fieldset>
+<% end %>

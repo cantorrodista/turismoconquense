@@ -602,3 +602,143 @@ input.checkbox {
 #advertisers #main_content #advertiser_body p{
 	font-size: 1.4em;
 }
+
+/* Caja de comentarios */
+
+.comments_box{
+	color:#616161;
+	display:block;
+	font-weight:bold;
+	margin-bottom:0.5em;
+}
+
+.comments_box h4, .comments_box ul{
+	font-size:1.4em;
+}
+
+.comments_box h4, .comments_box ul li{
+	padding: 0.4em 0;
+}
+.comments_box .comment_form{
+	padding-top: 1em;
+	
+}
+
+.comments_box .comment_form h4{
+	padding-bottom: 1em;
+	font-size:1.4em;
+	
+}
+
+
+.comments_box #new_comment form fieldset label{
+	font-size: 1em;
+	font-weight: bold;
+	font-size:1.4em;
+	
+}
+
+.comments_box #new_comment form fieldset input{
+	font-size:1em;
+	padding:0.3em;
+	font-size:1.4em;
+	
+}
+.comments_box #new_comment form fieldset p{
+	margin-bottom: 1em;
+}
+.comments_box #new_comment form fieldset button {
+	font-size: 1em;
+	font-size:1.4em;
+	
+}
+
+.comments_box #new_comment form .errorExplanation{
+	width: 34em;
+}
+
+
+/* ******************************************************
+GENERIC TABLES
+****************************************************** */
+
+.main_table {
+    width: 100%;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+    font-size: 1.2em;
+}
+.main_table.users_table {
+    font-size: xx-small;
+}
+.main_table.users_table td img {
+    float: left;
+    margin-right: .5em;
+}
+.main_table.users_table td span.cities {
+    font-size: .8em;
+    display: block;
+    color: #666;
+}
+.main_table caption {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 1em;
+    text-align: left;
+}
+.main_table thead {
+    background: #EDEDED;
+    color: #333;
+    text-align: left;
+}
+.main_table thead tr th {
+    padding: .5em 0 .5em 1.5em;
+}
+.main_table tr.even {
+    background: #fff;
+}
+.main_table tr.odd {
+    background: #EDEDED;
+}
+.main_table tr.even td {
+    padding: .8em 0 .8em 1em;
+}
+.main_table tbody tr td {
+    padding: .5em 0 .5em 1em;
+    vertical-align: top;
+}
+.main_table .actions {
+    text-align: center;
+}
+
+.main_table thead th.comments {
+    width: 30em;
+}
+.main_table tbody tr td strong {
+    display: block;
+    color: #333;
+}
+.main_table .check {
+    vertical-align: top;
+    width: .5em
+}
+
+.categories_navigation ul{
+	float:left;
+	margin-right:6em;
+	padding:2em 0;	
+}
+.categories_navigation ul li{
+	font-size: 1.4em;
+}
+
+.categories_navigation ul li a{
+ text-decoration: none;
+ 
+}
+.categories_navigation h2{
+	border-bottom:2px solid #FF9801;
+	font-size:2em;
+	margin:0 0 0.4em;
+	padding:0 0 0.4em;
+}

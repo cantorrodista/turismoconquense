@@ -1,0 +1,13 @@
+<div class="categories_navigation">
+<% @categories.each do |category|%>
+
+	<ul>
+		<h2><%= link_to category.name, highlights_categories_path(category.nicename)%></h2>
+		
+	  <% category.navigation_tags.each do |tag|%>
+		<li><%= link_to tag.name, tag_path(tag)%></li>
+	  <% end %>
+	</ul>
+<% end %>
+</div>
+

@@ -1,0 +1,48 @@
+          <h2><%= t('app.comments.index') %></h2>
+
+			<ul class="messages">
+				<li><%= link_to_if comment_published?, t('app.comments.link_to_drafts'), :action => 'index' %> (<%= Comment.drafts_without_checked('created_at').size%>) | </li>
+				<li><%= link_to_unless comment_published?, t('app.comments.link_to_published'), :action => 'index', :q => 'published' %> (<%= Comment.published_without_checked.size %>)</li>
+			</ul>
+			
+  
+          <table class="main_table">
+            <thead>
+              <tr>
+                <th class="comments">Comentario</th>
+                <th>Publicado en</th>
+                <th>Autor</th>
+                <th>Fecha</th>
+                <th class="actions">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+<% @comments.each do |comment| %>          
+              <tr class="<%= cycle "even", "odd" %>">
+                <td><acronym title="<%= comment.message%>"><%=clean_text(comment.message)%><%= link_to 'Ver', url_for(comment.commentable) + '#' + dom_id(comment)  %></acronym></td>
+                <td>
+                  <strong><%= t("app.#{comment.commentable.class.to_s.tableize}.title") %></strong>
+                  <%= link_to comment.commentable.name, url_for(comment.commentable) %></td>
+				<td>
+
+                  <%= clean_text(truncate(comment.author_name,:length => 15)) %>
+                  <%= comment.author_email %>
+                </td>
+                <td><%= l(comment.created_at, :format => "%d de %B de %Y<br /> %H:%M") %></td>
+                <td><%= link_to t('app.comments.destroy.link_to'), comment_path(comment), 
+                          :confirm => t('app.comments.destroy.confirm', :name => comment.author_name),
+                          :method => :delete %>
+					<%= !comment.published? ? link_to(t('app.comments.edit.link_to'), comment_path(comment), 
+		                          :confirm => t('app.comments.edit.confirm', :name => comment.author_name),
+		                          :method => :put) : link_to(t('app.comments.edit.link_to_unpublish'), comment_path(comment, :unpublish => true), 
+		                          :confirm => t('app.comments.edit.unpublish_confirm', :name => comment.author_name),
+		                          :method => :put) %>
+					
+                </td>
+              </tr>
+<% end %>
+              <tr>
+              </tr>
+            </tbody>   
+          </table>
+<%= will_paginate @comments%>

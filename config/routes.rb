@@ -9,7 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   map.highlights_categories 'highlights/categories/:category' ,:controller => 'highlights', :action => 'index'
   
   map.root :controller => 'home', :action => 'index'
-  
+  map.resources :comments
+  map.resources :tags, :controller => :navigation
 
 end
 

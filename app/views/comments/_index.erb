@@ -1,0 +1,32 @@
+<div class="comments_box">            
+  
+	<% collection = Settings.comments.activate_moderation == 1 ? resource.comments.published : resource.comments%>
+  <h4><%= collection.size %> comentarios <span><a href="<%=resource_path(resource)%>#new_comment">¡Deja el tuyo!</a></span></h4>   
+  
+
+  
+	
+  <ul>	
+	
+    <% collection.each do |comment| %>
+    <li id="<%= dom_id(comment) %>">
+        <div class="comments">
+        
+          <h5><strong>
+             <% if comment.uri? %>
+                <%= link_to clean_text(comment.author_name), comment.uri, { :rel => 'nofollow' } %>
+             <% else %>
+                <%= clean_text(comment.author_name) %>
+             <% end %>
+             </strong></h5>
+          <p><%= clean_text(comment.message) %></p>
+        </div><!-- .comments -->
+    </li>
+    <% end %>
+  </ul><!-- .comments -->
+  <div id="new_comment" class="comment_form">
+    <h4>Deja tu comentario:</h4>
+    <%= render :partial => 'comments/form' %>
+  </div><!-- #new_comment .comment_form -->
+</div><!-- .comments_box -->
+              

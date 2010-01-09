@@ -13,3 +13,5 @@
 	<p class="date">Empieza el <%=l(@highlight.start_date, :format => 'simple_date')%> y acaba el <%=l(@highlight.end_date, :format => 'simple_date')%></p>
 <% end %>
 </div>
+
+<%= render :partial => 'comments/index', :locals => {:resource => @highlight} %>

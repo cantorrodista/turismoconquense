@@ -20,7 +20,9 @@ module Nicenamed
   end
 
   def to_param
-    "#{self.nicename}-#{self.id}"
+    "#{self.nicename}-#{self.id}" 
+    rescue
+      "#{self.name}-#{self.id}"
   end
 end
 

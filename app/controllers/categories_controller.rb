@@ -1,9 +1,18 @@
 class CategoriesController < InheritedResources::Base
   defaults :resource_class => Category, :collection_name => 'categories', :instance_name => 'category'
   respond_to :html
-  before_filter :require_session
+  before_filter :require_session, :except => :index
   include NicenamedResource
   
+  
+  def index
+    if logged_in?
+      index!
+    else
+      @categories = Category.visible
+      render 'public_index'
+    end
+  end
   def create
       create! do |success, failure|
         success.html do

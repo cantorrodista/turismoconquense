@@ -27,7 +27,10 @@ defaults: &defaults
       body_medium: "470x470>"
       body: "670x270>"
       sidebar: "180x1000>"
-    
+  
+  comments:
+    activate_moderation: 1
+    per_page: 30
 
 development:
   <<: *defaults

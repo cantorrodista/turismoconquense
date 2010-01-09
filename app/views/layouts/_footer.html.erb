@@ -10,11 +10,9 @@
 		</ul>
 		<ul>
 			<h3>Ciudad Real</h3>
-			<li><a href="#">Música</a></li>
-			<li><a href="#">Teatro</a></li>
-			<li><a href="#">Cine</a></li>
-			<li><a href="#">Eventos</a></li>
-			<li><a href="#">Actualidad</a></li>	
+				<% Category.visible.each do |category|%>
+					<li <%= class_active(category.nicename)%>><%= link_to category.name, highlights_categories_path(category.nicename)%></li>
+				<% end %>
 		</ul>
 		<ul>
 			<h3>Por internet</h3>

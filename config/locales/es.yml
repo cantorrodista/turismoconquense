@@ -45,6 +45,12 @@ es:
       category:
         name: Nombre
         visible: Visible en el front
+        
+      comment:
+        name: Nombre
+        uri: Url
+        email: Correo electrónico
+        message: Mensaje
 
 # Errores de activerecord
     errors:
@@ -242,6 +248,9 @@ es:
         notice: Has borrado correctamente la categoría
 
       
+    comments:
+      create:
+        notice_with_moderation: "Tu comentario ha sido enviado correctamente, pero esta pendiente de moderación. ¡Gracias!"
 
   authlogic:
     error_messages:
@@ -301,6 +310,21 @@ es:
         link_to: 'Guardar'
       new:
         link_to: 'Nueva Categoría'
+    comments:
+      title: Comentarios
+      uri_optional: No obligatorio
+      index: Comentarios
+      link_to_drafts: No publicados
+      link_to_published: Publicados
+      destroy:
+        link_to: Eliminar
+      edit:
+        link_to: Publicar
+        link_to_unpublish: Despublicar
+        unpublish_confirm: ¿Seguro que deseas despublicar éste comentario?
+        confirm: ¿Seguro que deseas publicar éste comentario?
+    highlights:
+      title: Noticias 
     
       
 

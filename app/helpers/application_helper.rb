@@ -57,6 +57,22 @@ def use_tinymce
     end
   end
   
+  def get_highlight_title
+    if @category
+      "#{@category.name}"
+    else
+      "Noticias"
+    end
+    
+  end
   
+  
+  def clean_text(text)
+    simple_format(auto_link(strip_tags(sanitize(text)),:all, :rel => 'nofollow' ))
+  end
+
+  def simple_clean_text(text)
+    auto_link(strip_tags(sanitize(text)))
+  end
 end
 
