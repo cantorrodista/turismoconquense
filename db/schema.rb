@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100102102139) do
+ActiveRecord::Schema.define(:version => 20100109124123) do
 
   create_table "advertisers", :force => true do |t|
     t.string   "name"
@@ -95,21 +95,34 @@ ActiveRecord::Schema.define(:version => 20100102102139) do
   add_index "highlight_categories", ["highlight_id", "category_id"], :name => "highlight_categories_index", :unique => true
 
   create_table "highlights", :force => true do |t|
-    t.string   "name",          :default => "",    :null => false
-    t.string   "nicename",      :default => "",    :null => false
+    t.string   "name",                                                       :default => "",    :null => false
+    t.string   "nicename",                                                   :default => "",    :null => false
     t.text     "summary"
     t.text     "body"
-    t.boolean  "main_featured", :default => false, :null => false
-    t.boolean  "featured",      :default => false, :null => false
-    t.boolean  "published",     :default => false, :null => false
-    t.boolean  "closed",        :default => false, :null => false
+    t.boolean  "main_featured",                                              :default => false, :null => false
+    t.boolean  "featured",                                                   :default => false, :null => false
+    t.boolean  "published",                                                  :default => false, :null => false
+    t.boolean  "closed",                                                     :default => false, :null => false
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "excerpt"
     t.datetime "start_date"
     t.datetime "end_date"
+    t.integer  "rating_count",                                               :default => 0
+    t.integer  "rating_total",  :limit => 10, :precision => 10, :scale => 0, :default => 0
+    t.decimal  "rating_avg",                  :precision => 10, :scale => 2, :default => 0.0
   end
+
+  create_table "ratings", :force => true do |t|
+    t.integer "rater_id"
+    t.integer "rated_id"
+    t.string  "rated_type"
+    t.integer "rating",     :limit => 10, :precision => 10, :scale => 0
+  end
+
+  add_index "ratings", ["rated_type", "rated_id"], :name => "index_ratings_on_rated_type_and_rated_id"
+  add_index "ratings", ["rater_id"], :name => "index_ratings_on_rater_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

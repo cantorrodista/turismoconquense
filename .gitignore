@@ -4,4 +4,4 @@ tmp/*
 public/system
 db/*.sqlite3
 .DS_Store
-
+public/images/.DS_Store

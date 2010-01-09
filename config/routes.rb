@@ -11,6 +11,10 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home', :action => 'index'
   map.resources :comments
   map.resources :tags, :controller => :navigation
+  #Votaciones
+  map.resources :ratings, :only => :create
+  
+  
   map.connect "admin", :controller => :user_sessions, :action => :new
 
 end

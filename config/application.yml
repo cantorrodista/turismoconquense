@@ -31,6 +31,14 @@ defaults: &defaults
   comments:
     activate_moderation: 1
     per_page: 30
+  
+  ratings:
+    unlimited_votes: 0
+    login_required: 0
+    classes:
+      - 'Highlight'
+
+      
 
 development:
   <<: *defaults

@@ -34,3 +34,6 @@
 [submodule "vendor/plugins/acts-as-rated"]
 	path = vendor/plugins/acts-as-rated
 	url = git://github.com/thecocktail/acts-as-rated.git
+[submodule "vendor/plugins/jrails"]
+	path = vendor/plugins/jrails
+	url = git://github.com/aaronchi/jrails.git

@@ -17,8 +17,13 @@ class Highlight < ActiveRecord::Base
   named_scope :published,:conditions => ['published = ?', true], :order => 'created_at DESC'
   named_scope :main_featured,:conditions => ['main_featured = ?', true], :limit => 1
   named_scope :featured,:conditions => ['featured = ?', true],:order => 'created_at DESC', :limit => 10
+  acts_as_rated :rating_range => 1..5
   
   def is_event?
     self.categories.include?(Category.find_by_nicename('eventos'))
+  end
+  
+  def rating_average_pct
+    (rating_average || 0 ) * 100 / 5.0
   end
 end

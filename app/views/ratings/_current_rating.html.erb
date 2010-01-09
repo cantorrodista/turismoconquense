@@ -1,0 +1,12 @@
+<strong class="rate_question">
+  <% if new_vote %>
+    ¡Gracias por tu valoración!
+  <% else %>
+    Ya has valorado este contenido
+  <% end %>
+</strong>
+
+<ul class="star-rating inline-rating small-star">
+  <li style="width: <%= object.rating_average_pct %>%;" 
+      class="current-rating"><%= object.rating_average %>/5</li>
+</ul>

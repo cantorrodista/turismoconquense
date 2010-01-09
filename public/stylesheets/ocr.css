@@ -764,3 +764,101 @@ WYSWYG STYLES
 .acenter {
     text-align: center;
 }
+
+/**
+* # RATING STYLES
+*--------------------------------------------------------------------------*/
+
+
+.highlight-rating {
+    position: relative;
+    width: 29em;
+    overflow: hidden;
+		color:#666666;
+		font-size:1.2em;
+}
+.highlight-rating .rate_post {
+  float: left;
+  padding: 0.2em 0.5em 0 0;
+}
+.highlight-rating  .rate_question {
+    font-weight: bold;
+    color: #FF9801;
+    float: left;
+    padding: 0.2em 0.5em 0 0;
+}
+.star-rating, .star-rating a:hover, .star-rating a:active, .star-rating a:focus, .star-rating .current-rating {
+}
+.star-rating {
+    position: relative;
+    background-position: left top;
+    height: 18px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 90px;
+}
+.star-rating li {
+    display: inline;
+}
+.star-rating a, 
+.current-rating {
+    display: block;
+    height: 17px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -10000em;
+    top: 0;
+}
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus {
+    background-position: left bottom;
+}
+.star-rating a.one-star {
+    width: 18px;
+    z-index: 6;
+}
+.star-rating a.two-stars {
+    width: 36px;
+    z-index: 5;
+}
+.star-rating a.three-stars {
+    width: 54px;
+    z-index: 4;
+}
+.star-rating a.four-stars {
+    width: 72px;
+    z-index: 3;
+}
+.star-rating a.five-stars {
+    width: 90px;
+    z-index: 2;
+}
+.star-rating .current-rating {
+    background-position: left center;
+    z-index: 1;
+}
+.inline-rating {
+    display: inline-block;
+    vertical-align: middle;
+}
+.small-star {
+    height: 18px;
+    width: 90px;
+}
+.highlight-rating ul.small-star,
+.small-star, .small-star a:hover, .small-star a:active, .small-star a:focus, .small-star .current-rating {
+    background-image: url("../images/small_star.gif");
+    height: 17px;
+    margin: 0em 0em 0.4em 0;
+    padding: 0 0 0 0;
+    line-height: 1px;
+    clear: none;
+    float: left;
+    display: inline;
+}
+
+
