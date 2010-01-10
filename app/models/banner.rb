@@ -35,7 +35,7 @@ class Banner < ActiveRecord::Base
   def set_width
     self.width = case self.location
     when "Top" 
-      670
+      728
     when "Bottom"
       470
     else

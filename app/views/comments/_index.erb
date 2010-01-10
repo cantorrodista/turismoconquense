@@ -1,4 +1,4 @@
-<div class="comments_box degr_box border_box">            
+<div id="comments_box" class="comments_box degr_box border_box">            
   
 	<% collection = Settings.comments.activate_moderation == 1 ? resource.comments.published : resource.comments%>
   <h4><%= collection.size %> comentarios <span><a href="<%=resource_path(resource)%>#new_comment">¡Deja el tuyo!</a></span></h4>   

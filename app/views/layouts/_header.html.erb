@@ -1,13 +1,5 @@
 
 <div id="header">
-
-    <h1><a href="/"><span>Ocio Ciudad Real</span></a></h1>
-    <% if logged_in?%>
-		<div id="top_bar">
- 			<%= render :partial => "layouts/small_menu"%>		
-    	</div>
-	<% end 	%>
-	
 	<% if @top_banners %>
 		<% @top_banners.each do |banner|%>
 		<div class="banner top">
@@ -15,5 +7,22 @@
 			
 		<% end %>
 	<% end %>
+	<div class="main_header">
+		<% if logged_in?%>
+			<div id="top_bar">
+	 			<%= render :partial => "layouts/small_menu"%>		
+	    	</div>
+		<% end 	%>
+	    
+	</div>
+	<div id="menu">
+      <%= render :partial => "layouts/menu"%>
+    </div>
+	<div class="sub_header">
+	</div>
+<% if false%>
+	
+
+<% end%>
   </div>
 

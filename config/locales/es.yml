@@ -228,13 +228,13 @@ es:
       
     highlights:
       create:
-        notice: Reportaje creado correctamente :)
-        error: Ocurrio algun error al crear el reportaje :S
+        notice: Noticia creado correctamente :)
+        error: Ocurrio algun error al crear la noticia :S
       update:
-        notice: Reportaje actualizado correctamente :)
-        error: Ocurrio algún error al actualizar el reportaje :S
+        notice: Noticia actualizado correctamente :)
+        error: Ocurrio algún error al actualizar la noticia :S
       destroy:
-        notice: Has borrado correctamente el reportaje
+        notice: Has borrado correctamente la noticia
       
 
     categories:
@@ -296,11 +296,11 @@ es:
       new:
         link_to: 'Nuevo Banner'
     highlight:
-      title: Reportajes
+      title: Noticias
       create:
         link_to: 'Guardar'
       new:
-        link_to: 'Nuevo Reportaje'
+        link_to: 'Nueva noticia'
       edit:
         publish: Publicar
         save_as_draft: Borrador

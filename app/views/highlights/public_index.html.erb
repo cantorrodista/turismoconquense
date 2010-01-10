@@ -3,6 +3,7 @@
 		<% collection.each do |highlight|%>
 		<div class="detail_highlight degr_box border_box">		
 			<h3><%= link_to highlight.name,highlight_path(highlight)%></h3>
+		<div class="detail_highlight_content">
 			<dl>
 				<dt>Publicado en: </dt>
 				<dd><%= category_links highlight %></dd>
@@ -14,6 +15,11 @@
 				<% end %>
 				<p><%= highlight.summary%></p>
 				<%= link_to 'Leer mas', highlight_path(highlight)%>
+			</div>
+		</div>
+			<div class="user_actions">
+				<%= link_to pluralize(highlight.comments.published.size,'comentario'), highlight_path(highlight,:anchor => 'comments_box')%>
+
 			</div>
 		</div>
 		<% end %>

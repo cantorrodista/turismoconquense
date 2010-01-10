@@ -39,8 +39,8 @@ def use_tinymce
     !(request.user_agent =~ /.+MSIE 6\..+/).nil?
   end
   
-  def class_active(controller)
-    "class='active'" if params[:controller] == controller 
+  def class_active(term,first=false)
+    (params[:controller] == term || params[:category] == term) ? "class='active #{'first' if first}'" : "class='#{'first' if first}'"
   end
   
   def show_status_icon(status)

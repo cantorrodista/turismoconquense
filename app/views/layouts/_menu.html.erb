@@ -1,11 +1,13 @@
 <ul>
 		<% unless logged_in? %>
-		<li <%= class_active('home')%>><%= link_to 'Inicio', root_path%></li>
+		<li <%= class_active('home',true)%>><%= link_to 'portada', root_path%></li>
 		<% Category.visible[0..3].each do |category|%>
-			<li <%= class_active(category.nicename)%>><%= link_to category.name, highlights_categories_path(category.nicename)%></li>
+			<li <%= class_active(category.nicename)%>><%= link_to category.name.downcase, highlights_categories_path(category.nicename)%></li>
 		<% end %>
+		<li><%= link_to 'ver todas +', categories_path%></li>
+		
 		<% else %>
-			<li <%= class_active('banners')%>><%= link_to t('app.banner.title'), banners_path%></li>
+			<li <%= class_active('banners',true)%>><%= link_to t('app.banner.title'), banners_path%></li>
 			<li <%= class_active('advertisers')%>><%= link_to t('app.advertiser.title'), advertisers_path%></li>
 			<li <%= class_active('highlights')%>><%= link_to t('app.highlight.title'), highlights_path%></li>
 			<li <%= class_active('categories')%>><%= link_to t('app.category.title'), categories_path%></li>

@@ -25,7 +25,7 @@ defaults: &defaults
   banner:    
     image:
       body_medium: "470x470>"
-      body: "670x270>"
+      body: "728x90>"
       sidebar: "180x1000>"
   
   comments:

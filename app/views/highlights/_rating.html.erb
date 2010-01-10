@@ -1,0 +1,15 @@
+<% if Settings.ratings.login_required == 0 || logged_in?%>
+<div class="highlight-rating degr_box border_box" id="highlight-rating-highlight-<%= highlight.id %>">
+	<span class="rate_post">Valora este contenido: </span>
+	<ul class="star-rating inline-rating small-star">
+		<li style="width: <%= highlight.rating_average_pct %>%;" 
+			class="current-rating"><%= highlight.rating_average %>/5</li>
+			<% [[1, "one-star"], [2, "two-stars"], [3, "three-stars"], 
+			[4, "four-stars"], [5, "five-stars"]].each do |num, html_class| %>
+			<li>
+				<a onclick="$.ajax({dataType:'script', type:'POST', url:'<%= ratings_path(:rating => num, :id => highlight.id, :klass => "Highlight")%>'}); return false;" class="<%= html_class %>" href="#"><%= num %></a>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
