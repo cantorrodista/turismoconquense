@@ -574,7 +574,11 @@ input.checkbox {
 	float:left;
 	margin:-0.4em 1em 0.1em 0;
 }
-
+.share{
+	margin-top: 1.5em;
+	padding: 1em;
+	width: 29em;
+}
 .degr_box {
 	background: transparent url("../images/degr_caja_destacado.gif") repeat-x scroll center 1px;
 }
