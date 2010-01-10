@@ -1,6 +1,6 @@
-<h2 class="main">Tu guia del ocio en Ciudad Real</h2>
+<h2 class="main">destacado del dia</h2>
 
-	<div id="main_featured">
+	<div id="main_featured" class="degr_box">
 		<% if @main_featured %>
 	 <h3><%= link_to @main_featured.name, highlight_path(@main_featured)%></h3>
 		<h4><span class="category"><%= link_to @main_featured.categories.first.name, highlights_categories_path(@main_featured.categories.first.nicename)%></span></h4>
@@ -12,8 +12,10 @@
 	<%=@main_featured.summary%>
 	<% end %>
 	</div>
+	
+<h2 class="main">recomendaciones</h2>
 
-	<div id="featured">
+	<div id="featured" class="degr_box">
 		<% @featureds.each do |highlight|%>
 			<div class="small">
 	 			<% unless highlight.assets.blank?%>

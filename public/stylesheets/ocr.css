@@ -1,5 +1,5 @@
 body {
-  font-family: Georgia,sans-serif;
+  font-family: Arial,Helvetica,sans-serif;
   font-size: x-small;
   font-variant: normal;
   font-style: normal;
@@ -343,7 +343,6 @@ a {
 }
 #content h1 {
 	border-bottom:1px solid #FF9801;
-	font-family:Georgia,arial,sans-serif;
 	font-size:2em;
 	font-weight:bold;
 	line-height:1em;
@@ -353,8 +352,7 @@ a {
 
 #content #main_content h2.main{
 	border-bottom:1.5px solid #FF9801;
-	font-family:Georgia,arial,sans-serif;
-	font-size:2.8em;
+	font-size:2em;
 	font-weight:bold;
 	line-height:1em;
 	margin-bottom:0.5em;
@@ -363,10 +361,9 @@ a {
 
 #content h2 a{
 	text-decoration: none;
-	color: #666;
+	color: #3D3D3D;
 }
 #content h3 {
-	font-family:Georgia,arial,sans-serif;
 	font-size:1.4em;
 	font-weight:bold;
 	line-height:1.4em;
@@ -378,8 +375,12 @@ a {
 }
 #content h4 a{
 	text-decoration: none;
+	color: #666666;
+}
+#content h4 span a{
 	color: #FF9801;
 }
+
 #content h4 span{
 	color: #FF9801;
 }
@@ -461,6 +462,7 @@ input.checkbox {
 .banner{
 	margin: 0 auto;
 	margin-top: 1.5em;
+	
 }
 
 .banner.top{
@@ -505,11 +507,12 @@ input.checkbox {
 	padding: 2em;
 }
 
-.highlight{
+.highlight, .advertiser{
 	font-size: 1.2em;
+	padding: 1em;
 }
 
-.highlight p{
+.highlight p,.advertiser p {
 	font-size: 1.1em;
 }
 
@@ -543,8 +546,8 @@ input.checkbox {
 
 .highlight .detail_highlight{
 	border-bottom:1px solid #CCCCCC;
-	margin-top:2.6em;
-	padding:0 1em 2em;
+	margin-top:1em;
+	padding: 1em;
 }
 
 .highlight .highlght_content{
@@ -555,11 +558,20 @@ input.checkbox {
 	margin:-0.4em 1em 0.1em 0;
 }
 
+.degr_box {
+	background: transparent url("../images/degr_caja_destacado.gif") repeat-x scroll center 1px;
+}
+
+.border_box {
+	border: 1px solid #CCCCCC;
+}
 #main_featured{
 	height: 19em;
 	overflow: hidden;
 	font-size: 1.2em;
-	border-bottom:1.5px solid #FF9801;
+	border: 1px solid #CCCCCC;
+	padding: 1em;
+	margin-bottom: 2em;
 	
 }
 #main_featured #main_featured_image{
@@ -573,22 +585,30 @@ input.checkbox {
 }
 #featured {
 	font-size: 1.2em;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	padding: 1em;
+	margin-bottom: 2em;
 }
 
 #featured .small{
 	overflow: hidden;
 	height: 8em;
-	width: 22.5em;
+	width: 20.5em;
 	float: left;
-	padding: 1em 1.4em 1em 0;
+	padding: 0em 1.4em 1em 0;
 }
 
 #featured #featured_image {
-	float: left;
-	padding: 0.6em 0.6em 0.4em 0;
+	display:inline;
+	float:left;
+	overflow:hidden;
+	padding:0.6em 0.6em 0.4em 0;
 }
  #featured #text{
 	padding: 0.6em 0.6em 0.4em 0;
+	display: block;
+	overflow: hidden;
 }
 
 #featured #featured_image a img{
@@ -610,6 +630,8 @@ input.checkbox {
 	display:block;
 	font-weight:bold;
 	margin-bottom:0.5em;
+	padding: 1em;
+	margin-top: 1.5em;
 }
 
 .comments_box h4, .comments_box ul{
@@ -787,6 +809,8 @@ WYSWYG STYLES
     overflow: hidden;
 		color:#666666;
 		font-size:1.2em;
+		padding: 0.6em;
+		margin-top: 1.5em;
 }
 .highlight-rating .rate_post {
   float: left;
