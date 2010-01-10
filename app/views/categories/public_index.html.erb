@@ -5,22 +5,22 @@
 	<% next if category.navigation_tags.blank?%>
 	<li class="main_list">
 		<h2><%= link_to category.name, highlights_categories_path(category.nicename)%></h2>
-		<% limit = category.navigation_tags.size / 3 %>
+		<% limit = category.navigation_tags.size < 4 ? category.navigation_tags.size : category.navigation_tags.size / 3 %>
 	  <ul>
 	  <% category.navigation_tags[0..limit-1].each do |tag|%>
 		<li><%= link_to tag.name, tag_path(tag)%></li>
 	  <% end %>
 	 </ul>
-	 <% unless category.navigation_tags[limit-1].blank?%>
+	 <% unless category.navigation_tags[limit].blank?%>
 	  <ul>
-	  <% category.navigation_tags[limit-1..2*(limit-1)].each do |tag|%>
+	  <% category.navigation_tags[limit..2*(limit)-1].each do |tag|%>
 		<li><%= link_to tag.name, tag_path(tag)%></li>
 	  <% end %>
 	 </ul>
 	<% end %>
-	 <% unless category.navigation_tags[2*(limit-1)].blank?%>
+	 <% unless category.navigation_tags[2*(limit)].blank?%>
 	  <ul>
-	  <% category.navigation_tags[2*(limit-1)..3*(limit-1)].each do |tag|%>
+	  <% category.navigation_tags[2*(limit)..3*(limit)-1].each do |tag|%>
 		<li><%= link_to tag.name, tag_path(tag)%></li>
 	  <% end %>
 	 </ul>

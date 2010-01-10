@@ -54,7 +54,7 @@ onal.dtd">
 
       </div><!-- #content -->
 
-	 	<% if @bottom_banners && !logged_in?%>
+	 	<% if !@bottom_banners.blank? && !logged_in?%>
 		<div class="banner">	
 			<% @bottom_banners.each do |banner|%>
 				<div class="bottom"><%= link_to image_tag(banner.image(:body_medium)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></div>
