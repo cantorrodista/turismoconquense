@@ -1,28 +1,31 @@
 
 <div id="header">
 	<% if @top_banners %>
-		<% @top_banners.each do |banner|%>
-		<div class="banner top">
-			<%= link_to image_tag(banner.image(:body)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></div>
-			
-		<% end %>
-	<% end %>
-	<div class="main_header">
-		<% if logged_in?%>
-			<div id="top_bar">
-	 			<%= render :partial => "layouts/small_menu"%>		
-	    	</div>
-		<% end 	%>
-	    
-	</div>
-	<div id="menu">
-      <%= render :partial => "layouts/menu"%>
-    </div>
-	<div class="sub_header">
-	</div>
-<% if false%>
-	
+	<% @top_banners.each do |banner|%>
+	<div class="banner top">
+		<%= link_to image_tag(banner.image(:body)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></div>
 
-<% end%>
-  </div>
+		<% end %>
+		<% end %>
+		<div class="header_background">
+			<div class="main_header">
+				<h1><a href="/"><span>Ocio Ciudad Real</span></a></h1>
+				<% if logged_in?%>
+				<div id="top_bar">
+					<%= render :partial => "layouts/small_menu"%>		
+				</div>
+				<% end 	%>
+
+			</div>
+		</div>
+		<div id="menu">
+
+			<div id="wrapper">
+				<%= render :partial => "layouts/menu"%>
+			</div>
+		</div>
+		<div class="sub_header">
+		</div>
+
+	</div>
 

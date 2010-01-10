@@ -29,9 +29,12 @@ a {
 #header {
   margin: 0 auto;	
 }
-
+#header .header_background{
+	background: url(../images/header_bg.jpg) repeat-x scroll 0 0;
+	height: 25.6em;
+}
 #header .main_header{
-	background: url(../images/main_header.jpg) no-repeat scroll center center;
+	background:  transparent url(../images/main_header.jpg) no-repeat scroll center center;
 	height: 25.6em;
 }
 
@@ -40,12 +43,7 @@ a {
  float: left;
 }
 
-#header h1 a {
-	background: transparent url(../images/ociociudadreal_transparente.gif) no-repeat scroll center center;
-	display: block;
-	height: 10em;
-	width: 16em;
-}
+
 #header h1 a span{
 	display: none;
 }
@@ -66,7 +64,7 @@ a {
 #menu {
   height: 3.3em;
   background: #23230B url(../images/bottons_background.gif) repeat-x scroll 0 0;
-  
+  margin: 0 auto;
 }
 
 #menu ul {
@@ -357,7 +355,7 @@ a {
 #content h1 {
 	border-bottom:1px solid #7F7700;
 	font-size:2em;
-	font-weight:bold;
+	font-weight:normal;
 	line-height:1em;
 	margin-bottom:1em;
 	padding:0 8em 0.3em 0.2em;
@@ -529,7 +527,7 @@ input.checkbox {
 }
 
 .highlight p.date{
-	padding-bottom: 1.2em;	
+	padding: 1.2em 0;	
 }
 
 
@@ -578,6 +576,9 @@ input.checkbox {
 	margin-top: 1.5em;
 	padding: 1em;
 	width: 29em;
+}
+.user_actions .a2a_dd{
+	margin-left: 1em;
 }
 .degr_box {
 	background: transparent url("../images/degr_caja_destacado.gif") repeat-x scroll center 1px;
@@ -703,7 +704,6 @@ input.checkbox {
 
 .comments_box ul li .comments {
     background: url("../images/list_separator.gif") repeat-x bottom left;
-    width: 57.5em;
     padding: 0 0 2em 3em;
 }
 .comments_box ul li .comments p {
