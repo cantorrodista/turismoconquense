@@ -57,8 +57,9 @@ after  "deploy:update", "deploy:cleanup"
 desc "Migrations"
 task :run_migrations, :roles => :app do
   run <<-CMD
+    export RAILS_ENV=production &&
     cd #{release_path} &&
-    rake db:migrate RAILS_ENV=#{stage}
+    rake db:migrate
   CMD
 end
 
