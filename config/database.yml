@@ -21,8 +21,8 @@ test:
 production:
   adapter: mysql
   database: ocr
-  username: root
-  password:
+  username: ocr 
+  password: 7yokdjeS34
   host: localhost
   timeout: 5000
 

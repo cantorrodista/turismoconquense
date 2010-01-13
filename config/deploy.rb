@@ -1,0 +1,80 @@
+set :stages, %w(staging production)
+set :default_stage, "production"
+
+require 'capistrano/ext/multistage'
+
+##########################
+#  PARÁMETROS GENERALES  #
+##########################
+set :application,  "ocr"
+set :repository,   "ssh://91.121.229.244/git/ocr.git"
+set :deploy_to,    "/var/www/#{application}"
+set :server_group, 'www-data'
+set :runner,       'deploys'
+set :user,         'deploys'
+
+#########
+#  SCM  #
+#########
+set :scm,         :git
+set :branch,      "master"
+#set :scm_user,    'deploys'
+set :git_enable_submodules, 1
+
+#####################
+# FORMA DE DEPLOYAR #
+#####################
+set :deploy_via, :remote_cache
+set :keep_releases, 5
+default_run_options[:pty] = true #supuestamente subsana algún que otro error
+ssh_options[:paranoid] = false
+set :use_sudo, false
+set :keep_releases, 5
+
+####################
+# OTROS PARAMETROS #
+####################
+# dbdump de produccion y backup de assets
+set :rails_env, stage
+set :db_local_clean, false
+
+##############
+#  MAQUINAS  #
+##############
+#
+set :ocr,    '91.121.229.244'
+
+#########
+# ROLES #
+#########
+role :web,      ocr
+role :app,      ocr
+role :db,       ocr
+
+#####################
+## PERSONALIZACIÓN ##
+#####################
+after  "deploy:update_code", :delete_git_folder, :run_migrations
+after  "deploy:update", "deploy:cleanup"
+
+###############
+##  TAREAS   ##
+###############
+
+desc "Migrations"
+task :run_migrations, :roles => :app do
+  run <<-CMD
+    cd #{release_path} &&
+    rake db:migrate RAILS_ENV=#{stage}
+  CMD
+end
+
+desc "Restart Application"
+deploy.task :restart, :roles => [:app] do
+  run "touch #{current_path}/tmp/restart.txt"
+end
+task :delete_git_folder, :roles => [:web] do
+  run "rm -rf #{release_path}/.git"
+end
+
+
