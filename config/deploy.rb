@@ -47,7 +47,7 @@ role :db,       ocr
 #####################
 ## PERSONALIZACIÓN ##
 #####################
-after  "deploy:update_code", :delete_git_folder, :run_migrations
+after  "deploy:update_code", :delete_git_folder#, :run_migrations
 after  "deploy:update", "deploy:cleanup"
 
 ###############
