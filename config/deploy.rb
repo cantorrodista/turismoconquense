@@ -7,7 +7,7 @@ require 'capistrano/ext/multistage'
 #  PARÁMETROS GENERALES  #
 ##########################
 set :application,  "ocr"
-set :repository,   "ssh://91.121.229.244/git/ocr.git"
+set :repository,   "ssh://deploys@91.121.229.244/home/git/ocr"
 set :deploy_to,    "/var/www/#{application}"
 set :server_group, 'www-data'
 set :runner,       'deploys'
@@ -18,7 +18,7 @@ set :user,         'deploys'
 #########
 set :scm,         :git
 set :branch,      "master"
-#set :scm_user,    'deploys'
+set :scm_user,    'deploys'
 set :git_enable_submodules, 1
 
 #####################
@@ -29,14 +29,7 @@ set :keep_releases, 5
 default_run_options[:pty] = true #supuestamente subsana algún que otro error
 ssh_options[:paranoid] = false
 set :use_sudo, false
-set :keep_releases, 5
 
-####################
-# OTROS PARAMETROS #
-####################
-# dbdump de produccion y backup de assets
-set :rails_env, stage
-set :db_local_clean, false
 
 ##############
 #  MAQUINAS  #
