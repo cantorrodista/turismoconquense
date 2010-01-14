@@ -12,7 +12,7 @@ set :deploy_to,    "/var/www/#{application}"
 set :server_group, 'www-data'
 set :runner,       'deploys'
 set :user,         'deploys'
-
+set :rake,         "/opt/ruby-enterprise-1.8.7-2009.10/bin/rake"
 #########
 #  SCM  #
 #########
@@ -47,7 +47,7 @@ role :db,       ocr
 #####################
 ## PERSONALIZACIÓN ##
 #####################
-after  "deploy:update_code", :delete_git_folder#, :run_migrations
+after  "deploy:update_code", :delete_git_folder, :run_migrations
 after  "deploy:update", "deploy:cleanup"
 
 ###############
