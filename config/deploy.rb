@@ -47,7 +47,7 @@ role :db,       ocr
 #####################
 ## PERSONALIZACIÓN ##
 #####################
-after  "deploy:update_code", :delete_git_folder#, :run_migrations
+after  "deploy:update_code", :delete_git_folder, :run_migrations
 after  "deploy:update", "deploy:cleanup"
 
 ###############
@@ -59,7 +59,7 @@ task :run_migrations, :roles => :app do
   run <<-CMD
     export RAILS_ENV=production &&
     cd #{release_path} &&
-    rake db:migrate
+    /opt/ruby-enterprise-1.8.7-2009.10/bin/rake db:migrate
   CMD
 end
 
