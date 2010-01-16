@@ -633,7 +633,6 @@ input.checkbox {
 	overflow: hidden;
 }
 #main_featured{
-	height: 19em;
 	overflow: hidden;
 	font-size: 1.2em;
 	border: 1px solid #CCCCCC;
@@ -662,9 +661,7 @@ input.checkbox {
 	overflow:hidden;
 	padding:0.6em 0.6em 0.4em 0;
 }
-#main_featured  p{
-	margin-top: 1em;
-}
+
 #featured {
 	font-size: 1.2em;
 	overflow: hidden;
