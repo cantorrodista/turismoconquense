@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
   
   def load_banners
     unless logged_in?
-      category = params[:category] ? params[:category] : 'home'        
+      category = (params[:category_id] || params[:category]) ? (params[:category_id] || params[:category]) : 'home'        
       @top_banners = Banner.by_location('Top').by_category(category)
       @left_banners = Banner.by_location('Left').by_category(category)
       @right_banners = Banner.by_location('Right').by_category(category)
