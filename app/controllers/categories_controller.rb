@@ -28,6 +28,7 @@ class CategoriesController < InheritedResources::Base
 
   def update
     update!  do |success, failure|
+      
       success.html do
         flash[:notice] = t("flash.categories.update.notice")
         redirect_to categories_path

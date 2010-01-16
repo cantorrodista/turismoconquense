@@ -65,6 +65,21 @@ a {
     float: left;
     margin-left: 0.6em;
 }
+
+#secondary_menu{
+	margin: 2em 0;
+}
+
+#secondary_menu a{
+	text-decoration:none;
+	font-size: 1.4em;
+	color:#666666;
+	line-height: 1.5em;
+}
+
+#secondary_menu ul{
+	padding: 1em;
+}
 #menu {
   height: 3.3em;
   background: #23230B url(../images/bottons_background.gif) repeat-x scroll 0 0;

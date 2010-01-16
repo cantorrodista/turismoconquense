@@ -8,7 +8,22 @@
   		<%= f.check_box :visible, :class => 'checkbox' %>
           <%= f.label :visible, t('activerecord.attributes.category.visible') %>
     </p>
-
-
+	<% unless @category.new_record?%>
+	<fieldset class="categories">
+		<legend><%= t 'app.category.navigation_tags'%></legend>
+	<ul>
+		<% unless  @category.navigation_tags.blank?%>
+		 <%- @category.navigation_tags.each do |tag| -%>
+              <li>  
+                <input name="category[tag_ids][]" id="category_tag_<%= tag.id %>" value="<%= tag.id %>" class="checkbox" type="checkbox"<%= ' checked="checked"' if category.tags.include?(tag) %> />
+				<%= f.label "tag_#{tag.id}", "#{tag.name}(#{tag.total})" %>
+              </li>
+          <%- end -%>
+		<% else %>
+			<p>Todavía no has tageado ningún contenido de ésta categoría</p>
+		<% end %>
+		</ul>
+	</fieldset>
+	<% end %>
 
 <%= f.submit t('app.category.create.link_to') %>

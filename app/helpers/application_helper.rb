@@ -74,5 +74,19 @@ def use_tinymce
   def simple_clean_text(text)
     auto_link(strip_tags(sanitize(text)))
   end
+  
+  def get_secondary_menu
+    if params[:category] && @category && !@category.tags.blank?
+      ret = ""
+      ret << '<div id="secondary_menu" class="degr_box border_box">'
+      ret << "<ul>"
+      @category.tags.each do |tag|
+        ret <<"<li>#{link_to tag.name, tag_path(tag)}</li>"
+      end
+      ret << "</ul>"
+      ret << "</div>"
+      ret
+    end
+  end
 end
 

@@ -30,7 +30,7 @@
 	url = git://github.com/cantorrodista/paperclippolymorph.git
 [submodule "vendor/plugins/acts-as-taggable-on"]
 	path = vendor/plugins/acts-as-taggable-on
-	url = git://github.com/mbleigh/acts-as-taggable-on.git
+	url = git://github.com/cantorrodista/acts-as-taggable-on.git
 [submodule "vendor/plugins/acts-as-rated"]
 	path = vendor/plugins/acts-as-rated
 	url = git://github.com/thecocktail/acts-as-rated.git

@@ -306,6 +306,7 @@ es:
         save_as_draft: Borrador
     category:
       title: Categorías
+      navigation_tags: Navegación secundaria de la categoría
       create:
         link_to: 'Guardar'
       new:

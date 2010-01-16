@@ -39,6 +39,7 @@ onal.dtd">
 		  	</div>
 		  <%- end %>
     	<div id="sidebar_left">
+				<%= get_secondary_menu %>
 			<% unless logged_in? %>
 				<%= render :partial => "layouts/left_sidebar"%>
 			<% end %>

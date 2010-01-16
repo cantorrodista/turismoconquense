@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100109124123) do
+ActiveRecord::Schema.define(:version => 20100115225755) do
 
   create_table "advertisers", :force => true do |t|
     t.string   "name"
@@ -123,6 +123,14 @@ ActiveRecord::Schema.define(:version => 20100109124123) do
 
   add_index "ratings", ["rated_type", "rated_id"], :name => "index_ratings_on_rated_type_and_rated_id"
   add_index "ratings", ["rater_id"], :name => "index_ratings_on_rater_id"
+
+  create_table "tag_categories", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "category_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
