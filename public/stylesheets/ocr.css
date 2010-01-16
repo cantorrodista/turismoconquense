@@ -85,8 +85,7 @@ a {
 #secondary_menu a:hover{
 	color: white;
 	background: #7F7700;
-	padding: 0.5em;
-	text-decoration: underline;
+	padding: 0.15em 0.5em;
 }
 #secondary_menu ul{
 	padding: 1em;
@@ -99,6 +98,7 @@ a {
 
 #secondary_menu ul li.active a{
 	color: white;
+	padding-left: 0.5em;
 }
 #menu {
   height: 3.3em;
