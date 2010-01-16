@@ -92,7 +92,14 @@ a {
 	padding: 1em;
 }
 
+#secondary_menu ul li.active{
+	background: #7F7700;
+	
+}
 
+#secondary_menu ul li.active a{
+	color: white;
+}
 #menu {
   height: 3.3em;
   background: #23230B url(../images/bottons_background.gif) repeat-x scroll 0 0;

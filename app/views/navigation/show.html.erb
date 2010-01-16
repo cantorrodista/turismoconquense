@@ -1,5 +1,5 @@
 <div class="highlight">
-	<h2 class="main"><%= get_highlight_title%></h2>
+	<h2 class="main"><%= get_highlight_title%> | <%= @tag.name%></h2>
 		<% collection.each do |highlight|%>
 		<div class="detail_highlight degr_box border_box">		
 			<h3><%= link_to highlight.name,highlight_path(highlight)%></h3>

@@ -40,7 +40,7 @@ def use_tinymce
   end
   
   def class_active(term,first=false)
-    (params[:controller] == term || params[:category] == term) ? "class='active #{'first' if first}'" : "class='#{'first' if first}'"
+    (params[:controller] == term || params[:category] == term || params[:category_id] == term) ? "class='active #{'first' if first}'" : "class='#{'first' if first}'"
   end
   
   def show_status_icon(status)
@@ -76,13 +76,13 @@ def use_tinymce
   end
   
   def get_secondary_menu
-    if params[:category] && @category && !@category.tags.blank?
+    if (params[:category] || params[:category_id] )&& @category && !@category.tags.blank?
       ret = ""
       ret << '<div id="secondary_menu" class="degr_box border_box">'
       ret << "<h4>Filtros</h4>"
       ret << "<ul>"
       @category.tags.each do |tag|
-        ret <<"<li>#{link_to tag.name, category_tag_path(@category,tag)}</li>"
+        ret <<"<li #{'class=active' if params[:id] && NicenamedResource.extract_id(params[:id]) == tag.id.to_s}>#{link_to tag.name, category_tag_path(@category.nicename,tag)}</li>"
       end
       ret << "</ul>"
       ret << "</div>"
