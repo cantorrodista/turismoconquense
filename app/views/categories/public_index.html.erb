@@ -8,20 +8,20 @@
 		<% limit = category.navigation_tags.size < 4 ? category.navigation_tags.size : category.navigation_tags.size / 3 %>
 	  <ul>
 	  <% category.navigation_tags[0..limit-1].each do |tag|%>
-		<li><%= link_to tag.name, tag_path(tag)%></li>
+		<li><%= link_to tag.name, category_tag_path(category,tag)%></li>
 	  <% end %>
 	 </ul>
 	 <% unless category.navigation_tags[limit].blank?%>
 	  <ul>
 	  <% category.navigation_tags[limit..2*(limit)-1].each do |tag|%>
-		<li><%= link_to tag.name, tag_path(tag)%></li>
+		<li><%= link_to tag.name, category_tag_path(category,tag)%></li>
 	  <% end %>
 	 </ul>
 	<% end %>
 	 <% unless category.navigation_tags[2*(limit)].blank?%>
 	  <ul>
 	  <% category.navigation_tags[2*(limit)..3*(limit)-1].each do |tag|%>
-		<li><%= link_to tag.name, tag_path(tag)%></li>
+		<li><%= link_to tag.name, category_tag_path(category,tag)%></li>
 	  <% end %>
 	 </ul>
 	<% end %>

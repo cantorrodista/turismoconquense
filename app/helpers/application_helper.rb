@@ -79,9 +79,10 @@ def use_tinymce
     if params[:category] && @category && !@category.tags.blank?
       ret = ""
       ret << '<div id="secondary_menu" class="degr_box border_box">'
+      ret << "<h4>Filtros</h4>"
       ret << "<ul>"
       @category.tags.each do |tag|
-        ret <<"<li>#{link_to tag.name, tag_path(tag)}</li>"
+        ret <<"<li>#{link_to tag.name, category_tag_path(@category,tag)}</li>"
       end
       ret << "</ul>"
       ret << "</div>"
