@@ -55,6 +55,12 @@ a {
 
 #top_bar{
 	height: 3em;
+	float:right;
+	color: #222;
+	font-size: 1.4em;
+}
+#top_bar a{
+	color: #222;
 }
 #top_bar ul{
     float: right;
