@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ExceptionNotifiable
+  
   helper_method :current_user_session, :current_user, :logged_in?
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   before_filter :load_banners
