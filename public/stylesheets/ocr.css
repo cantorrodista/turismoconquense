@@ -576,7 +576,7 @@ input.checkbox {
 }
 
 .highlight p.date{
-	padding: 0.5em 0;	
+	padding: 1.2em 0;	
 }
 
 
@@ -585,6 +585,8 @@ input.checkbox {
 	font-size:1.2em;
 	margin-bottom:0.6em;
 	overflow:hidden;
+	display: block;
+	height: 1%;
 }
 
 
