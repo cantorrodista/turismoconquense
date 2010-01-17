@@ -579,7 +579,9 @@ input.checkbox {
 	padding: 0.2em 0;	
 }
 
-
+.highlight .detail_highlight_content p.date{
+	padding-bottom: 1.2em;	
+}
 .highlight dl {
 	color:#666;
 	font-size:1.2em;
