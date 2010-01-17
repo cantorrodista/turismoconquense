@@ -56,6 +56,14 @@ def use_tinymce
       end.join(', ')
     end
   end
+  def navigation_tags_links(resource=nil)
+    if resource
+      resource.navigation.map do |tag|
+            link_to(tag.name, tag_path(tag))
+      end.join(', ')
+    end
+  end
+  
   
   def get_highlight_title
     if @category
@@ -87,6 +95,14 @@ def use_tinymce
       ret << "</ul>"
       ret << "</div>"
       ret
+    end
+  end
+  
+  def admin_class
+    if logged_in?
+      "main_content admin" if params[:controller] = "comments"
+    else
+      "main_content"
     end
   end
 end

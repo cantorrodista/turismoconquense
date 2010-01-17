@@ -216,13 +216,15 @@ a {
 
 }
 
-#main_content {
+.main_content {
     float: left;
     width: 57.5em;
 		padding: 2em 1em 0em 1em;
 }
 
-
+.admin{
+	width: 96em;
+}
 #sidebar_right{
     float: right;
     width:18em;
@@ -231,7 +233,7 @@ a {
 
 #content form{
     margin: 0 auto;
-    width: 71em;
+    width: 94em;
 }
 #content form fieldset {
   border: medium none;
@@ -400,7 +402,7 @@ a {
 	padding:0 8em 0.3em 0.2em;
 }
 
-#content #main_content h2.main{
+#content .main_content h2.main{
 	border-bottom:1.5px solid #7F7700;
 	font-size:2em;
 	font-weight:normal;
@@ -701,11 +703,11 @@ input.checkbox {
 	border:none;
 }
 
-#advertisers #main_content #advertiser_body{
+#advertisers .main_content #advertiser_body{
 	padding-top: 2em;
 }
 
-#advertisers #main_content #advertiser_body p{
+#advertisers .main_content #advertiser_body p{
 	font-size: 1.4em;
 }
 
