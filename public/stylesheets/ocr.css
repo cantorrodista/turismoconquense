@@ -235,6 +235,10 @@ a {
     margin: 0 auto;
     width: 94em;
 }
+
+#content form.new_comment{
+	width: auto;
+}
 #content form fieldset {
   border: medium none;
 }
@@ -350,13 +354,15 @@ a {
 }
 
 .noticeExplanation {
-    background-color: #99CC99;
+    background-color: #7F7700;
     vertical-align: top;
     text-align: center;
     margin-bottom: 1em;
     padding: 1em;	
     font-weight: normal;
     font-size: 1.8em;
+		margin-top: 1em;
+		color: #FFF;
 }
 
 .toolbar {

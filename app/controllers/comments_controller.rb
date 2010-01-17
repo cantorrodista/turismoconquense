@@ -13,7 +13,7 @@ class CommentsController < InheritedResources::Base
             #Notifications.deliver_new_comment(@comment) 
             flash[:notice] = t('flash.comments.create.notice_with_moderation')
           end
-          redirect_to url_for(@commentable) + '#comments_box'
+          redirect_to url_for(@commentable)
         }
         failure.html do
           flash[:new_comment_errors] = '<ul><li>' + 
