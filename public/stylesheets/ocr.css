@@ -531,7 +531,7 @@ input.checkbox {
 
 .banner.top{
 	margin-top: 0em;
-	background: #2F2F00;
+	background: transparent url(../images/main_header_back_lite.png) repeat-x scroll 0 0;
 	
 }
 
