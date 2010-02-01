@@ -50,5 +50,5 @@ test:
 
 production:
   <<: *defaults
-  url: 'http://ociociudadreal.cantorrodista.com'
+  url: 'http://ociolamancha.com'
  
