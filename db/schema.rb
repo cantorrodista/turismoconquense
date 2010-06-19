@@ -95,8 +95,8 @@ ActiveRecord::Schema.define(:version => 20100115225755) do
   add_index "highlight_categories", ["highlight_id", "category_id"], :name => "highlight_categories_index", :unique => true
 
   create_table "highlights", :force => true do |t|
-    t.string   "name",                                                       :default => "",    :null => false
-    t.string   "nicename",                                                   :default => "",    :null => false
+    t.string   "name",                                                                          :null => false
+    t.string   "nicename",                                                                      :null => false
     t.text     "summary"
     t.text     "body"
     t.boolean  "main_featured",                                              :default => false, :null => false

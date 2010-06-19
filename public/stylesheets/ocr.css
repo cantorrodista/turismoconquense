@@ -25,17 +25,21 @@ a {
 .accesible {
   display: none;
 }
+#container{
+	background: #EEE;
+}
 
 #header {
   margin: 0 auto;	
+	padding-top: 2em;
 }
 #header .header_background{
-	background: url(../images/main_header_back.png) repeat-x scroll 0 0;
-	height: 25.6em;
+	border-bottom:1px solid #CCCCCC;
+	height:10em;
 }
 #header .main_header{
-	background:  transparent url(../images/main_header.jpg) no-repeat scroll center center;
-	height: 25.6em;
+	background:  transparent url(../images/main_logo.jpg) no-repeat scroll top left;
+	height: 10em;
 }
 #header .sub_header{
 	background: url(../images/sub_header_background.gif) repeat-x scroll 0 0;
@@ -108,8 +112,8 @@ a {
 }
 #menu {
   height: 3.3em;
-  background: #23230B url(../images/bottons_background.gif) repeat-x scroll 0 0;
   margin: 0 auto;
+	border-bottom:1px solid #CCCCCC;
 }
 
 #menu ul {
@@ -122,15 +126,14 @@ a {
 
 #menu li {
   float: left;
-  border-left: 2px solid #FFFFFF;
+  border-left: 1px solid #CCC;
 }
 #menu li.first{
 	border:none;
 }
 
 #menu .active a {
-  background:#7F7700;
-  color:#FFF;
+  color:#3366CC;
   padding-left:0;
 }
  #menu .active a {
@@ -138,14 +141,14 @@ a {
 }
 
 #menu li a:hover {
-	background-color:#7F7700;
-	color:#FFFFFF;
+	background: #3366CC;
+	color:#FFF;
 	cursor:pointer;
-	text-decoration: underline;
+	text-decoration: none;
 }
 #menu a {
   border:medium none;
-  color:#FFFFFF;
+  color:#3366CC;
   display:block;
   font-weight:normal;
   font-size:1.6em;
@@ -161,15 +164,19 @@ a {
 #wrapper  {
   margin: 0 auto;
   width: 96em;
-
-
-
+	background: white;
+}
+.rounded{
+	-moz-border-radius: 2ex;
+	-webkit-border-radius: 2ex;
+	border: 4px solid #CCC;
+	padding: 10px;
 }
 #footer {
-	background-color:#2F2F00;
-	border-top:8px solid #989900;
+	background-color:#EEE;
+	border-top:8px solid #3366CC;
 	clear:both;
-	color:#FFFF99;
+	color:#99CC66;
 	margin-top: 2em;
 	height: 30em;
 }
@@ -183,14 +190,14 @@ a {
 }
 
 #footer ul li a{
-	color: #FFFFCC;
-	text-decoration: none;
-	font-size: 1.4em;
+	color:#111;
+	font-size:1.4em;
 	line-height:1.5em;
+	text-decoration:none;
 } 
 #footer ul li a:hover{
 	text-decoration: underline;
-	color: #FFFF00;
+	color: #111;
 }
 #footer h2{
 	background:transparent url(../images/activa2black_small.jpg) no-repeat scroll center center;
@@ -203,7 +210,7 @@ a {
 	display:none;
 }
 #footer h3{
-	border-bottom:2px solid #989900;
+	border-bottom:2px solid #3366CC;
 	font-size:2em;
 	margin:0 0 0.4em;
 	padding:0 0 0.4em	

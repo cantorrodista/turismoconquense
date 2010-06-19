@@ -1,83 +1,85 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transiti
-onal.dtd">
+	onal.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es" xmlns:fb="http://www.facebook.com/2008/fbml">
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-  <title><%#= get_title %></title>
-  <base href="<%= Settings.url %>" />
+	<title><%#= get_title %></title>
+	<base href="<%= Settings.url %>" />
 
-<% if asset_packager? %>
-  <%= stylesheet_link_merged :base %>
-<% else %>
-  <%= stylesheet_link_tag "ocr" %>
+	<% if asset_packager? %>
+	<%= stylesheet_link_merged :base %>
+	<% else %>
+	<%= stylesheet_link_tag "ocr" %>
 
-<% end %>
-  <!--[if lte IE 7]>
-     <%= stylesheet_link_tag "ocr_ie" %>
-  <![endif]-->
-  <link rel="start" type="text/html" href="/" title="Página de inicio" />
+	<% end %>
+	<!--[if lte IE 7]>
+	<%= stylesheet_link_tag "ocr_ie" %>
+	<![endif]-->
+	<link rel="start" type="text/html" href="/" title="Página de inicio" />
 
-  <%= render :partial => 'layouts/google_analytics' unless RAILS_ENV == "development" %>
+	<%= render :partial => 'layouts/google_analytics' unless RAILS_ENV == "development" %>
 
 </head>
 <body id="<%= params[:controller] %>">
- 
 
-  <div id="container">
-	<%= render :partial => 'layouts/header' %>
-    
-    <div id="wrapper">
-	
 
-    <div id="content">	    
-			<div id="flmessages"></div>
-			<%- if app_message? -%>
-		  	<div class="flashmsg <%= app_message_type %>">
-		     <%= app_message %>
-		  	</div>
-		  <%- end %>
-    	<div id="sidebar_left">
-				<%= get_secondary_menu %>
-			<% unless logged_in? %>
-				<%= render :partial => "layouts/left_sidebar"%>
-			<% end %>
-    	</div>
-		<div class="main_content <%=admin_class%>">
-      <%= yield -%>
-   		</div>
-    	<div id="sidebar_right">
-			<% unless logged_in? %>
-				<%= render :partial => "layouts/right_sidebar"%>
-    		<% end %>
-		</div>
+	<div id="container">
+		<div id="wrapper" class="rounded">
 
-      </div><!-- #content -->
+			<%= render :partial => 'layouts/header' %>
 
-	 	<% if !@bottom_banners.blank? && !logged_in?%>
-		<div class="banner">	
-			<% @bottom_banners.each do |banner|%>
+
+
+			<div id="content">	    
+				<div id="flmessages"></div>
+				<%- if app_message? -%>
+				<div class="flashmsg <%= app_message_type %>">
+					<%= app_message %>
+				</div>
+				<%- end %>
+				<div id="sidebar_left">
+					<%= get_secondary_menu %>
+					<% unless logged_in? %>
+					<%= render :partial => "layouts/left_sidebar"%>
+					<% end %>
+				</div>
+				<div class="main_content <%=admin_class%>">
+					<%= yield -%>
+				</div>
+				<div id="sidebar_right">
+					<% unless logged_in? %>
+					<%= render :partial => "layouts/right_sidebar"%>
+					<% end %>
+				</div>
+
+			</div><!-- #content -->
+
+			<% if !@bottom_banners.blank? && !logged_in?%>
+			<div class="banner">	
+				<% @bottom_banners.each do |banner|%>
 				<div class="bottom"><%= link_to image_tag(banner.image(:body_medium)), banner.advertiser ? advertiser_path(banner.advertiser) : banner.url%></div>
+				<% end %>
+			</div>
 			<% end %>
-		</div>
-		<% end %>
-  </div><!-- #wrapper -->
 
-  </div><!-- #container -->
-  <%= render :partial => 'layouts/footer' %>
+	</div><!-- #wrapper -->
+	<%= render :partial => 'layouts/footer' %>
+	
+</div><!-- #container -->
 
-<% if asset_packager? %>
-  <%= javascript_include_merged :base %>
-<% else %>
-  <%= javascript_include_tag  'jquery',  'jquery-ui', 'jrails'-%>
-<% end %>
+	<% if asset_packager? %>
+	<%= javascript_include_merged :base %>
+	<% else %>
+	<%= javascript_include_tag  'jquery',  'jquery-ui', 'jrails'-%>
+	<% end %>
 
-<%= yield :tinymce -%>
-<%= yield :footer -%>
+	<%= yield :tinymce -%>
+	<%= yield :footer -%>
 
 
-<%= yield :tinymce_init %>
+	<%= yield :tinymce_init %>
 </body>
 </html>
 
