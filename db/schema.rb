@@ -150,13 +150,13 @@ ActiveRecord::Schema.define(:version => 20100115225755) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",             :limit => 120, :default => "",    :null => false
-    t.string   "login",             :limit => 120, :default => "",    :null => false
+    t.string   "email",             :limit => 120,                    :null => false
+    t.string   "login",             :limit => 120,                    :null => false
     t.integer  "login_count",                      :default => 0,     :null => false
-    t.string   "crypted_password",                 :default => "",    :null => false
-    t.string   "password_salt",                    :default => "",    :null => false
-    t.string   "persistence_token",                :default => "",    :null => false
-    t.string   "perishable_token",                 :default => "",    :null => false
+    t.string   "crypted_password",                                    :null => false
+    t.string   "password_salt",                                       :null => false
+    t.string   "persistence_token",                                   :null => false
+    t.string   "perishable_token",                                    :null => false
     t.boolean  "admin",                            :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

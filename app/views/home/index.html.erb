@@ -32,6 +32,7 @@
 			<% unless highlight.assets.blank?%>
 			<div id="featured_image">
 				<a href="<%= highlight_path(highlight)%>"><%= image_tag highlight.assets.first.url(:small_size)%></a>
+
 			</div>
 			<% end %>
 			<div id="text">
