@@ -3,23 +3,17 @@
 <div id="footer">
 		<div id="footer_content">
 		<ul>
-			<h3>Sobre Nosotros</h3>
-			<li><a href="#">Quienes somos</a></li>
-			<li><a href="#">Política de privacidad</a></li>
-			<li><a href="#">Que ofrecemos</a></li>
-			<li><a href="#">Anúnciate</a></li>
-		</ul>
-		<ul>
-			<h3>Ciudad Real</h3>
+			<h3>Cuenca</h3>
 				<% Category.visible.each do |category|%>
 					<li <%= class_active(category.nicename)%>><%= link_to category.name, highlights_categories_path(category.nicename)%></li>
 				<% end %>
 		</ul>
-		<ul>
-			<h3>Síguenos</h3>
-			<li><a href="#">Facebook</a></li>
-			<li><a href="#">Twitter</a></li>
-			<li><a href="#">Flickr</a></li>
+		<ul class="latest">
+			<h3>Lo mas Leído</h3>
+			<% 20.times do%>
+			 <% h = Highlight.published.rand%>
+				<li><a href="<%=highlight_path(h)%>"><%=h.name%></a></li>
+			<% end %>
 		</ul>
 	  </div>
 	</div>

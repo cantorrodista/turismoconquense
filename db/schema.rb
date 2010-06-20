@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100115225755) do
+ActiveRecord::Schema.define(:version => 20100619225500) do
 
   create_table "advertisers", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20100115225755) do
     t.string   "attachable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   add_index "attachings", ["asset_id"], :name => "index_attachings_on_asset_id"
@@ -87,6 +88,35 @@ ActiveRecord::Schema.define(:version => 20100115225755) do
 
   add_index "comments", ["commentable_type", "commentable_id", "created_at"], :name => "commentable_type_and_commentable_id_and_created_at"
 
+  create_table "feedsucker_feeds", :force => true do |t|
+    t.string   "title"
+    t.string   "nicetitle"
+    t.string   "url"
+    t.integer  "number_of_posts"
+    t.boolean  "delete_preview"
+    t.string   "xpath_blog_title"
+    t.string   "xpath_blog_url"
+    t.string   "xpath_post_title"
+    t.string   "xpath_post_content"
+    t.string   "xpath_post_date"
+    t.string   "xpath_post_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feedsucker_posts", :force => true do |t|
+    t.integer  "feedsucker_feed_id"
+    t.string   "blog_title"
+    t.string   "blog_url"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "date"
+    t.string   "url"
+    t.boolean  "processed",          :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "highlight_categories", :force => true do |t|
     t.integer "highlight_id"
     t.integer "category_id"
@@ -104,6 +134,8 @@ ActiveRecord::Schema.define(:version => 20100115225755) do
     t.boolean  "published",                                                  :default => false, :null => false
     t.boolean  "closed",                                                     :default => false, :null => false
     t.datetime "date"
+    t.string   "source_name"
+    t.string   "source_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "excerpt"

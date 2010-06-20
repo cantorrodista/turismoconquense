@@ -11,7 +11,40 @@ def use_tinymce
     end
   end
 
+  def get_title
+    title = []
+    title << 'Noticias en Cuenca - Turismo Conquense'
+    if @highlight
+      title << @highlight.name
+    elsif @category
+      title << @category.name
+    else
+     title << t("app.#{params[:controller]}.title")
+    end
+    title.reverse.join(' - ')
+  end
 
+  
+  def set_metadescription
+    @meta_description = []
+    if  @highlight
+      @meta_description << @highlight.name
+    elsif Settings.metas[params[:controller]]
+      @meta_description << Settings.metas[params[:controller]]
+    elsif @category 
+     @meta_description <<  "Todas las noticias de #{@category.name} en cuenca"
+    else
+      ""
+    end
+    @meta_description << Settings.metas.default
+    @meta_description = @meta_description.join(', ')
+    
+  end
+  
+  def set_keywords
+    ("#{Settings.app.keywords}".downcase).split(",").map{|k| k.strip}.uniq.compact.join(", ")
+    
+  end
 
   def app_message?
     !(flash[:error].nil? and flash[:notice].nil? and flash[:info].nil?)

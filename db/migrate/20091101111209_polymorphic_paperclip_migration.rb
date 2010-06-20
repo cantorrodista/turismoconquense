@@ -15,6 +15,7 @@ class PolymorphicPaperclipMigration < ActiveRecord::Migration
       t.string   "attachable_type"
       t.datetime "created_at"
       t.datetime "updated_at"
+      t.integer "position"
     end
     
     add_index "attachings", ["asset_id"], :name => "index_attachings_on_asset_id"

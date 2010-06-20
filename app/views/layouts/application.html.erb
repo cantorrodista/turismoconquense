@@ -5,7 +5,12 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-	<title><%#= get_title %></title>
+   <% set_metadescription %>
+  <% if @meta_description.present? -%>
+    <meta name="description" content="<%= strip_tags(@meta_description) %>" />
+  <% end %>
+      <meta name='keywords' content='<%= set_keywords%>' />
+  <title><%= get_title %></title>
 	<base href="<%= Settings.url %>" />
 
 	<% if asset_packager? %>

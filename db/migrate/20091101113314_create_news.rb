@@ -9,7 +9,9 @@ class CreateNews < ActiveRecord::Migration
       t.boolean :featured,       :null => false, :default => false
       t.boolean :published,      :null => false, :default => false
       t.boolean :closed,         :null => false, :default => false
-      t.datetime :date          
+      t.datetime :date   
+      t.string :source_name
+      t.string :source_url       
       t.timestamps
     end
   end

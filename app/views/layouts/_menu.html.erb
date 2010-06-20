@@ -1,10 +1,10 @@
 <ul>
 		<% unless logged_in? %>
-		<li <%= class_active('home',true)%>><%= link_to 'portada', root_path%></li>
-		<% Category.visible[0..4].each do |category|%>
+		<li <%= class_active('home',true)%>><%= link_to 'home', root_path%></li>
+		<% Category.visible[0..5].each do |category|%>
 			<li <%= class_active(category.nicename)%>><%= link_to category.name.downcase, highlights_categories_path(category.nicename)%></li>
 		<% end %>
-		<li><%= link_to 'ver todas +', categories_path%></li>
+		<!-- <li><%#= link_to 'ver todas +', categories_path%></li> -->
 		
 		<% else %>
 			<li <%= class_active('banners',true)%>><%= link_to t('app.banner.title'), banners_path%></li>

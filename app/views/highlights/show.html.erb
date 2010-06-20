@@ -6,7 +6,7 @@
 		<dd><%= category_links @highlight %></dd>
 	</dl>
 
-	<p class="date"><%=l(@highlight.date, :format => 'simple_date')%></p>
+	<p class="date"><%=l(@highlight.date, :format => :default_date)%> - Fuente: <%= link_to @highlight.source_name, @highlight.source_url%></p>
 
 	<%= @highlight.body%>
 	<% if @highlight.is_event?%>	

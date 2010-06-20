@@ -3,7 +3,9 @@ defaults: &defaults
     admin_email: cantorrodista@gmail.com
     include_for_asset_packager: 0
     url: "http://localhost:3000"
-    
+    keywords: "cuenca, turismo, noticias, actualidad, viajes, ocio, españa, hoteles"
+  metas:
+    default: "Todas las noticias sobre cuenca. Turismo, viajes y actualidad de la provincia de castilla la mancha"
   highlight:
     assets:
       styles:

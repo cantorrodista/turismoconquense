@@ -8,7 +8,7 @@
 				<dt>Publicado en: </dt>
 				<dd><%= category_links highlight %></dd>
 			</dl>
-			<p class="date"><%=l(highlight.date, :format => 'simple_date')%></p>
+			<p class="date"><%=l(highlight.date, :format => :default_date)%> - Fuente: <%= link_to highlight.source_name, highlight.source_url%></p>
 			<div class="highlght_content">
 				<% unless highlight.assets.blank?%>
 				<%= image_tag highlight.assets.first.url(:small_size)%>

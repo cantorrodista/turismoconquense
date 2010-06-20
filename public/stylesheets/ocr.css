@@ -1,5 +1,5 @@
 body {
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: Georgia,sans-serif;
   font-size: x-small;
   font-variant: normal;
   font-style: normal;
@@ -27,6 +27,7 @@ a {
 }
 #container{
 	background: #EEE;
+	overflow: hidden;
 }
 
 #header {
@@ -157,13 +158,13 @@ a {
   padding-top:0.3em;
   text-align:center;
   text-decoration:none;
-  width:7.7em;
+  width:6.8em;
 }
 
 
 #wrapper  {
   margin: 0 auto;
-  width: 96em;
+  width: 99em;
 	background: white;
 }
 .rounded{
@@ -174,9 +175,8 @@ a {
 }
 #footer {
 	background-color:#EEE;
-	border-top:8px solid #3366CC;
 	clear:both;
-	color:#99CC66;
+	color:#3366CC;
 	margin-top: 2em;
 	height: 30em;
 }
@@ -187,6 +187,11 @@ a {
 	padding: 2em 0em;
 	margin-right: 6em;
 	float: left;
+}
+
+#footer ul.latest {
+	width: 40em;
+	overflow: hidden;
 }
 
 #footer ul li a{
@@ -210,7 +215,7 @@ a {
 	display:none;
 }
 #footer h3{
-	border-bottom:2px solid #3366CC;
+	border-bottom:2px solid #99CC66;
 	font-size:2em;
 	margin:0 0 0.4em;
 	padding:0 0 0.4em	
@@ -218,7 +223,7 @@ a {
 #content{
   margin: 0 auto;
   overflow: hidden;
-  width: 96em;
+  width: 99em;
 
 
 }
@@ -231,7 +236,7 @@ a {
 
 .main_content {
     float: left;
-    width: 57.5em;
+    width: 66em;
 		padding: 2em 1em 0em 1em;
 }
 
@@ -422,7 +427,7 @@ a {
 }
 
 #content .main_content h2.main{
-	border-bottom:1.5px solid #7F7700;
+	border-bottom:1.5px solid #99CC66;
 	font-size:2em;
 	font-weight:normal;
 	line-height:1em;
@@ -449,11 +454,11 @@ a {
 	color: #666666;
 }
 #content h4 span a{
-	color: #7F7700;
+	color: #3366CC;
 }
 
 #content h4 span{
-	color: #7F7700;
+	color: #3366CC;
 }
  
 .table_list {
@@ -586,12 +591,15 @@ input.checkbox {
 
 .highlight p,.advertiser p {
 	font-size: 1.1em;
+	overflow: hidden;
 }
 
 .highlight p.date{
 	padding: 0.2em 0;	
 }
-
+.highlight img{
+	padding: 1em;
+}
 .highlight .detail_highlight_content p.date{
 	padding-bottom: 1.2em;	
 }
@@ -615,7 +623,7 @@ input.checkbox {
 }
 
 .highlight dl dd a {
-	color:#7F7700;
+	color:#3366CC;
 	font-weight:bold;
 	text-decoration:none;
 }
@@ -705,7 +713,7 @@ input.checkbox {
 #featured .small{
 	overflow: hidden;
 	height: 8em;
-	width: 20.5em;
+	width: 25em;
 	float: left;
 	padding: 0em 1.4em 2em 0;
 }
