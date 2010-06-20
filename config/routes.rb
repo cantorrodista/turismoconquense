@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   #Votaciones
   map.resources :ratings, :only => :create
   
-  
+  map.connect "resultados", :controller => :home, :action => :search
   map.connect "admin", :controller => :user_sessions, :action => :new
 
 end

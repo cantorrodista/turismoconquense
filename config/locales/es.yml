@@ -273,6 +273,8 @@ es:
 
 
   app:
+    home:
+      title: Home
     site:
       logged_in_only: Debes iniciar sesión para ver éste contenido
     advertiser:

@@ -43,7 +43,18 @@
 				<div class="flashmsg <%= app_message_type %>">
 					<%= app_message %>
 				</div>
-				<%- end %>
+				
+	
+				<form action="http://turismoconquense.com/resultados" id="cse-search-box">
+				  <div>
+				    <input type="hidden" name="cx" value="partner-pub-1843683943847304:pjeuf3lsggm" />
+				    <input type="hidden" name="cof" value="FORID:10" />
+				    <input type="hidden" name="ie" value="ISO-8859-1" />
+				    <input type="text" name="q" size="31" />
+				    <input type="submit" name="sa" value="Buscar" />
+				  </div>
+				</form>
+				<script type="text/javascript" src="http://www.google.es/cse/brand?form=cse-search-box&amp;lang=es"></script>				<%- end %>
 				<div id="sidebar_left">
 					<%= get_secondary_menu %>
 					<% unless logged_in? %>

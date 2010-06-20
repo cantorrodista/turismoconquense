@@ -4,3 +4,30 @@
 	<% end %>
 <% end %>
 
+<div class="block border_box">
+	<div class="header">
+		<h3>Lo mas valorado</h3>
+	</div>
+	<div class="content degr_box">
+		<ul>
+		<% 5.times do %>
+			<% h = Highlight.published.rand%>
+			<li><%= link_to h.name, highlight_path(h)%></li>
+		<% end%>
+		</ul>
+	</div>
+</div>
+
+<div class="block border_box">
+	<div class="header">
+		<h3>Lo mas leído hoy</h3>
+	</div>
+	<div class="content degr_box">
+		<ul>
+		<% 5.times do %>
+			<% h = Highlight.published.rand%>
+			<li><%= link_to h.name, highlight_path(h)%></li>
+		<% end%>
+		</ul>
+	</div>
+</div>

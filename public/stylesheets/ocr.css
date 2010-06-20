@@ -245,10 +245,30 @@ a {
 }
 #sidebar_right{
     float: right;
-    width:18em;
+    width:29em;
 
 }
 
+.block{
+	margin-top: 2em;
+}
+
+.block .header{
+	background: #3366CC;
+	color: white;
+}
+
+.block .content{
+		padding: 1em;
+		font-size: 1.3em;
+}
+.block .content li{
+	padding-bottom: 0.5em;
+}
+#content .block .header h3{
+	font-size:1.8em;
+	padding:0.4em 0.8em;
+}
 #content form{
     margin: 0 auto;
     width: 94em;
