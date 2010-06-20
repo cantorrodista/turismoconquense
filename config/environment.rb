@@ -42,4 +42,4 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 ExceptionNotifier.exception_recipients = "notificaciones.ocr@cantorrodista.com"
-ExceptionNotifier.email_prefix = "[OCR][ERROR] "
+ExceptionNotifier.email_prefix = "[TURISMOCONQUENSE][ERROR] "

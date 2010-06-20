@@ -52,5 +52,5 @@ test:
 
 production:
   <<: *defaults
-  url: 'http://ociolamancha.com'
+  url: 'http://turismoconquense.com'
  

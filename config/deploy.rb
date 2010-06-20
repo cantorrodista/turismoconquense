@@ -1,13 +1,5 @@
-set :stages, %w(staging production)
-set :default_stage, "production"
-
-require 'capistrano/ext/multistage'
-
-##########################
-#  PARÁMETROS GENERALES  #
-##########################
-set :application,  "ocr"
-set :repository,   "ssh://deploys@91.121.229.244/home/git/ocr"
+set :application,  "turismoconquense"
+set :repository,   "ssh://deploys@91.121.229.244/home/git/turismoconquense"
 set :deploy_to,    "/var/www/#{application}"
 set :server_group, 'www-data'
 set :runner,       'deploys'
@@ -35,19 +27,19 @@ set :use_sudo, false
 #  MAQUINAS  #
 ##############
 #
-set :ocr,    '91.121.229.244'
+set :turismoconquense,    '91.121.229.244'
 
 #########
 # ROLES #
 #########
-role :web,      ocr
-role :app,      ocr
-role :db,       ocr
+role :web,      turismoconquense
+role :app,      turismoconquense
+role :db,       turismoconquense
 
 #####################
 ## PERSONALIZACIÓN ##
 #####################
-after  "deploy:update_code", :delete_git_folder, :run_migrations
+after  "deploy:update_code", :delete_git_folder, :run_migrations#, :generate_sitemap
 after  "deploy:update", "deploy:cleanup"
 
 ###############
@@ -71,4 +63,10 @@ task :delete_git_folder, :roles => [:web] do
   run "rm -rf #{release_path}/.git"
 end
 
+desc "Generar Sitemap"
+task :generate_sitemap, :roles => [:web] do
+  run <<-EOF
+     cd #{release_path} && /opt/ruby-enterprise-1.8.7-2009.10/bin/rake RAILS_ENV=production sitemap:refresh:no_ping
+   EOF
+end
 

@@ -167,6 +167,13 @@ a {
   width: 99em;
 	background: white;
 }
+#wrapper_pub  {
+  margin: 0 auto;
+  width: 72.5em;
+	padding: 0.5em 0em;
+
+	background: white;
+}
 .rounded{
 	-moz-border-radius: 2ex;
 	-webkit-border-radius: 2ex;
