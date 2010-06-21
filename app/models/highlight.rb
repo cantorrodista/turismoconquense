@@ -26,6 +26,10 @@ class Highlight < ActiveRecord::Base
     self.categories.include?(Category.find_by_nicename('eventos'))
   end
   
+  def url
+    "cuenca/noticias/#{to_param}"
+  end
+  
   def rating_average_pct
     (rating_average || 0 ) * 100 / 5.0
   end

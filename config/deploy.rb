@@ -39,7 +39,7 @@ role :db,       turismoconquense
 #####################
 ## PERSONALIZACIÓN ##
 #####################
-after  "deploy:update_code", :delete_git_folder, :run_migrations#, :generate_sitemap
+after  "deploy:update_code", :delete_git_folder, :run_migrations, :generate_sitemap
 after  "deploy:update", "deploy:cleanup"
 
 ###############
