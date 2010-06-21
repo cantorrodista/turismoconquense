@@ -45,4 +45,4 @@
 	url = git://github.com/thecocktail/feedsucker.git
 [submodule "vendor/plugins/sitemap_generator"]
 	path = vendor/plugins/sitemap_generator
-	url = http://github.com/adamsalter/sitemap_generator.git
+	url = git://github.com/kjvarga/sitemap_generator.git
