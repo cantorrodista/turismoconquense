@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100619225500) do
+ActiveRecord::Schema.define(:version => 20100622215733) do
 
   create_table "advertisers", :force => true do |t|
     t.string   "name"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20100619225500) do
     t.integer  "rating_count",                                               :default => 0
     t.integer  "rating_total",  :limit => 10, :precision => 10, :scale => 0, :default => 0
     t.decimal  "rating_avg",                  :precision => 10, :scale => 2, :default => 0.0
+    t.boolean  "with_body",                                                  :default => false
   end
 
   create_table "ratings", :force => true do |t|

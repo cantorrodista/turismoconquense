@@ -19,6 +19,9 @@ class Highlight < ActiveRecord::Base
   named_scope :featured,:conditions => ['featured = ?', true],:order => 'date DESC', :limit => 10
   named_scope :last_hour, :order => 'date DESC', :limit => 1
   named_scope :latest, :order => 'date DESC', :limit => 20
+  named_scope :voces, :conditions => "source_name = 'Voces de Cuenca'"
+  named_scope :cuencainformacion, :conditions => "source_name = 'Cuenca Información'"
+  named_scope :cerca, :conditions => "source_name = 'La Cerca'"
   
   acts_as_rated :rating_range => 1..5
   
@@ -35,10 +38,9 @@ class Highlight < ActiveRecord::Base
   end
   
   def self.get_source(string)
-    debugger
     if string.match("corresponsal")
       "Corresponsal"
-    elsif string.match("LaCerca")
+    elsif string.match("lacerca")
       "La Cerca"
     elsif string.match("vocesdecuenca")
       "Voces de Cuenca"

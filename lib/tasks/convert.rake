@@ -1,5 +1,8 @@
-namespace :convert do
-  desc "transforma unas a otras"
-  task :highlights => :environment do
+namespace :highlights do
+  desc "lee cuerpos de noticias"
+  task :update => :environment do
+     Newsparser.load_voces
+     Newsparser.load_cuencainformacion
+     Newsparser.load_cerca
   end
 end
