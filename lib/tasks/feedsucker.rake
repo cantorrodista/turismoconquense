@@ -33,6 +33,9 @@ namespace :feedsucker do
     Highlight.published[1..10].each do |a|
      a.update_attribute(:featured, true)
     end
+    Newsparser.load_voces
+    Newsparser.load_cuencainformacion
+    Newsparser.load_cerca
     
   end
 end
