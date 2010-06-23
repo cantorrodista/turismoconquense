@@ -4,7 +4,7 @@ require 'digest/sha1'
 class RemoteFile < ::Tempfile
  
   def initialize(path, tmpdir = Dir::tmpdir)
-    @original_filename  = File.basename(path)
+    @original_filename  = File.basename(path).parameterize
     @remote_path        = path
  
     super Digest::SHA1.hexdigest(path), tmpdir

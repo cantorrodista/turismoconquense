@@ -2,7 +2,7 @@ Category.seed do |s|
   s.id = 1
   s.name = 'Portada'
   s.nicename = 'portada'
-  s.visible = 0
+  s.visible = 0 
 end
 
 Category.seed do |s|

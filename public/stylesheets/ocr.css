@@ -1062,4 +1062,6 @@ WYSWYG STYLES
     display: inline;
 }
 
-
+div.publi{
+	margin: 1em 0em;
+}

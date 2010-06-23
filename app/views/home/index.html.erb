@@ -23,17 +23,19 @@
 </div>
 
 <% end %>
+<div class="publi">
 <script type="text/javascript"><!--
 google_ad_client = "pub-1843683943847304";
-/* 728x15, creado 21/06/10 */
-google_ad_slot = "8626494911";
-google_ad_width = 728;
+/* 468x15, creado 23/06/10 */
+google_ad_slot = "3127379755";
+google_ad_width = 468;
 google_ad_height = 15;
 //-->
 </script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+</div>
 <h2 class="main">Recomendaciones</h2>
 
 <div id="featured" class="degr_box">
@@ -48,8 +50,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 			</div>
 			<% end %>
 			<div id="text">
-				<h4><span class="category"><%= link_to highlight.categories.first.name, highlights_categories_path(highlight.categories.first.nicename) unless highlight.categories.blank?%>: </span><%= link_to highlight.name, highlight_path(highlight)%></h4>
-				<%=highlight.excerpt%>
+				<h4><span class="category"><%= link_to highlight.categories.first.name, highlights_categories_path(highlight.categories.first.nicename) unless highlight.categories.blank?%>: </span><%= link_to truncate(highlight.name, :length => 80), highlight_path(highlight)%></h4>
+				<%=truncate(highlight.excerpt, :length => 80)%>
 				<p><%= l(highlight.date, :format => :default_date)%> - Fuente: <%= link_to highlight.source_name, highlight.source_url%></p>
 				
 			</div>

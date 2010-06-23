@@ -13,7 +13,7 @@
 				<% unless highlight.assets.blank?%>
 				<%= image_tag highlight.assets.first.url(:small_size)%>
 				<% end %>
-				<p><%= highlight.summary%><%= link_to 'Leer mas', highlight_path(highlight)%></p>
+				<p><%= highlight.summary%></p><p><%= link_to 'Leer mas', highlight_path(highlight)%></p>
 				
 			</div>
 		</div>
@@ -23,5 +23,5 @@
 			</div>
 		</div>
 		<% end %>
-		<%= will_paginate collection%>
+		<%= will_paginate collection, :previous_label => "Anterior", :next_label => "Siguente &raquo"%>
 </div>
