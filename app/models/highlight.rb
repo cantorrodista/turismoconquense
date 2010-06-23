@@ -29,6 +29,14 @@ class Highlight < ActiveRecord::Base
     self.categories.include?(Category.find_by_nicename('eventos'))
   end
   
+  def self.with_assets
+    final = []
+    Highlight.published.each do |a|
+      final << a if !a.assets.blank?
+    end
+    final
+  end
+  
   def url
     "cuenca/noticias/#{to_param}"
   end

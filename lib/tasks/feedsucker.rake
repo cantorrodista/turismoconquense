@@ -29,14 +29,16 @@ namespace :feedsucker do
       end
       Highlight.published.each{|a| a.update_attribute(:main_featured, false)}
       Highlight.published.each{|a| a.update_attribute(:featured, false)}
-
-      Highlight.last_hour.first.update_attribute(:main_featured, true)
-      Highlight.published[1..10].each do |a|
-        a.update_attribute(:featured, true)
+      Highlight.with_assets[0..10].each_with_index do |post, index|
+        if index == 0
+          post.update_attribute(:main_featured, true) 
+        else
+          post.update_attribute(:featured, true)
+        end
       end
       Newsparser.load_voces
-       Newsparser.load_cuencainformacion
-       Newsparser.load_cerca
+      Newsparser.load_cuencainformacion
+      Newsparser.load_cerca
     rescue Exception => e
       puts e
     end        
