@@ -17,12 +17,3 @@ test:
   #socket: /tmp/mysql.sock
 
 
-
-production:
-  adapter: mysql
-  database: turismo_conquense
-  username: turismo
-  password: 23ike8GEo
-  host: localhost
-  timeout: 5000
-
